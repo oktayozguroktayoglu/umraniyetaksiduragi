@@ -54,6 +54,45 @@ const uniq = (arr) => [...new Map(arr.map((x) => [trLower(x), x])).values()];
 // Ad içinde Türkçe karakter düzeltmesi yapılmaz; OSM'deki adlar olduğu gibi kullanılır.
 const clean = (s) => s.replace(/\s+/g, ' ').trim();
 
+// İlişki üyelerinden (way geometrileri) dış halkaları birleştirir
+function ringsOf(rel) {
+  const segs = (rel.members || []).filter((m) => m.type === 'way' && m.role !== 'inner' && m.geometry).map((m) => m.geometry.map((g) => [g.lon, g.lat]));
+  const rings = [];
+  const key = (p) => p[0].toFixed(7) + ',' + p[1].toFixed(7);
+  while (segs.length) {
+    let ring = segs.shift();
+    let guard = 0;
+    while (key(ring[0]) !== key(ring[ring.length - 1]) && guard++ < 5000) {
+      const end = key(ring[ring.length - 1]);
+      const i = segs.findIndex((s) => key(s[0]) === end || key(s[s.length - 1]) === end);
+      if (i < 0) break;
+      let s = segs.splice(i, 1)[0];
+      if (key(s[0]) !== end) s = s.slice().reverse();
+      ring = ring.concat(s.slice(1));
+    }
+    if (ring.length > 3) rings.push(ring);
+  }
+  return rings;
+}
+function inRing(pt, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i], [xj, yj] = ring[j];
+    if ((yi > pt[1]) !== (yj > pt[1]) && pt[0] < ((xj - xi) * (pt[1] - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+const inside = (c, rings) => rings.some((r) => inRing([c.lon, c.lat], r));
+function centroid(rings) {
+  const r = rings.reduce((a, b) => (b.length > a.length ? b : a), []);
+  let A = 0, cx = 0, cy = 0;
+  for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+    const f = r[j][0] * r[i][1] - r[i][0] * r[j][1];
+    A += f; cx += (r[j][0] + r[i][0]) * f; cy += (r[j][1] + r[i][1]) * f;
+  }
+  return A ? { lat: +(cy / (3 * A)).toFixed(6), lon: +(cx / (3 * A)).toFixed(6) } : { lat: r[0][1], lon: r[0][0] };
+}
+
 async function main() {
   // 1) Mahalle sınırları
   let rels = [];
@@ -61,7 +100,7 @@ async function main() {
     const q = `[out:json][timeout:120];
 area["boundary"="administrative"]["name"="Ümraniye"]["admin_level"="6"]->.d;
 rel(area.d)["boundary"="administrative"]["admin_level"="${level}"];
-out tags center;`;
+out geom;`;
     const j = await overpass(q);
     rels = j.elements.filter((e) => e.tags?.name);
     const hits = MAHALLELER.filter((m) => rels.some((r) => norm(r.tags.name) === norm(m.name))).length;
@@ -72,7 +111,7 @@ out tags center;`;
   const found = {};
   for (const m of MAHALLELER) {
     const r = rels.find((x) => norm(x.tags.name) === norm(m.name));
-    if (r) found[m.slug] = { osmId: r.id, osmName: r.tags.name, center: r.center };
+    if (r) found[m.slug] = { osmId: r.id, osmName: r.tags.name, rings: ringsOf(r) };
     else console.warn('OSM’de bulunamadı:', m.name);
   }
   if (Object.keys(found).length < 30) throw new Error('Yeterli mahalle eşleşmedi, veri yazılmadı.');
@@ -92,27 +131,27 @@ out tags center;`);
   const pick = (els, test, max = 6) =>
     uniq(els.filter((e) => e.tags?.name && test(e.tags)).map((e) => clean(e.tags.name))).slice(0, max);
 
-  for (const [slug, d] of Object.entries(found)) {
-    const areaId = 3600000000 + d.osmId;
-    console.log('sorgu:', slug);
-    const j = await overpass(`[out:json][timeout:120];
-area(id:${areaId})->.a;
+  for (const d of Object.values(found)) d.center = centroid(d.rings);
+  const all = await overpass(`[out:json][timeout:180];
+area["boundary"="administrative"]["name"="Ümraniye"]["admin_level"="6"]->.d;
 (
- nwr["amenity"="hospital"]["name"](area.a);
- nwr["healthcare"="hospital"]["name"](area.a);
- nwr["shop"="mall"]["name"](area.a);
- nwr["amenity"="university"]["name"](area.a);
- nwr["leisure"="park"]["name"](area.a);
- nwr["amenity"="place_of_worship"]["name"](area.a);
- nwr["amenity"="school"]["name"](area.a);
- nwr["tourism"="hotel"]["name"](area.a);
- nwr["amenity"~"^(townhall|courthouse|police|library|community_centre)$"]["name"](area.a);
- nwr["office"="government"]["name"](area.a);
- nwr["leisure"~"^(stadium|sports_centre)$"]["name"](area.a);
- way["highway"~"^(motorway|trunk|primary|secondary|tertiary)$"]["name"](area.a);
+ nwr["amenity"="hospital"]["name"](area.d);
+ nwr["healthcare"="hospital"]["name"](area.d);
+ nwr["shop"="mall"]["name"](area.d);
+ nwr["amenity"="university"]["name"](area.d);
+ nwr["leisure"="park"]["name"](area.d);
+ nwr["amenity"="place_of_worship"]["name"](area.d);
+ nwr["amenity"="school"]["name"](area.d);
+ nwr["tourism"="hotel"]["name"](area.d);
+ nwr["amenity"~"^(townhall|courthouse|police|library|community_centre)$"]["name"](area.d);
+ nwr["office"="government"]["name"](area.d);
+ nwr["leisure"~"^(stadium|sports_centre)$"]["name"](area.d);
+ way["highway"~"^(motorway|trunk|primary|secondary|tertiary)$"]["name"](area.d);
 );
 out tags center;`);
-    const els = j.elements;
+  console.log('toplam öğe:', all.elements.length);
+  for (const [slug, d] of Object.entries(found)) {
+    const els = all.elements.filter((x) => { const c = center(x); return c && inside(c, d.rings); });
     d.hospitals = pick(els, (t) => t.amenity === 'hospital' || t.healthcare === 'hospital');
     d.malls = pick(els, (t) => t.shop === 'mall');
     d.universities = pick(els, (t) => t.amenity === 'university', 4);
@@ -128,8 +167,7 @@ out tags center;`);
       .map((s) => ({ name: s.name, km: +hav(d.center, s).toFixed(1) }))
       .sort((a, b) => a.km - b.km)
       .slice(0, 3);
-    console.log(slug, `hastane ${d.hospitals.length}, avm ${d.malls.length}, park ${d.parks.length}, cadde ${d.roads.length}`);
-    await sleep(2500);
+    console.log(slug, `öğe ${els.length}, hastane ${d.hospitals.length}, avm ${d.malls.length}, cadde ${d.roads.length}`);
   }
 
   // 4) Komşu (en yakın) mahalleler
@@ -172,6 +210,7 @@ out tags center;`);
     });
   }
 
+  for (const d of Object.values(found)) delete d.rings;
   const out = { generated: new Date().toISOString().slice(0, 10), source: 'OpenStreetMap katkıcıları (ODbL), OSRM', mahalle: found };
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1));
   console.log('yazıldı:', OUT, Object.keys(found).length, 'mahalle');
