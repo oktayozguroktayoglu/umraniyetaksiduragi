@@ -1,5 +1,9 @@
 // Tüm firma bilgileri tek yerde. Durağın adı kesinleşince sadece BRAND satırını değiştirin.
-export const SITE_URL = 'https://umraniyetaksiduragi.com';
+// Alan adı bağlanınca CUSTOM_DOMAIN = true yapın (site umraniyetaksiduragi.com köküne taşınır).
+export const CUSTOM_DOMAIN = false;
+export const SITE_ORIGIN = CUSTOM_DOMAIN ? 'https://umraniyetaksiduragi.com' : 'https://oktayozguroktayoglu.github.io';
+export const BASE = CUSTOM_DOMAIN ? '' : '/umraniyetaksiduragi';
+export const SITE_URL = SITE_ORIGIN + BASE;
 export const BRAND = 'Ümraniye Taksi Durağı';
 export const PHONE_DISPLAY = '0507 220 09 52';
 export const PHONE_TEL = '+905072200952';
