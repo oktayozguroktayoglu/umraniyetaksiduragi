@@ -66,14 +66,15 @@ def schema(page_url, area):
 
 
 def buttons():
-    wa = (f'<a class="btn wa" href="https://wa.me/{WHATSAPP}">WhatsApp</a>'
+    wa = (f'<a class="btn wa" href="https://wa.me/{WHATSAPP}">WhatsApp\'tan yaz</a>'
           if WHATSAPP else "")
-    return f'<a class="btn call" href="tel:{PHONE_TEL}">📞 Hemen Ara: {PHONE_DISPLAY}</a>{wa}'
+    return f'<a class="btn call" href="tel:{PHONE_TEL}">Ara: {PHONE_DISPLAY}</a>{wa}'
 
 
-def page(path, title, desc, h1, body, area, root="./"):
+def page(path, title, desc, h1, lead, body, area, root="./"):
     url = f"{SITE}/{path}"
     e = html.escape
+    home = "" if root == "./" else root
     return f"""<!doctype html>
 <html lang="tr">
 <head>
@@ -92,10 +93,10 @@ def page(path, title, desc, h1, body, area, root="./"):
 </head>
 <body>
 <header class="top">
-  <a class="logo" href="{root}">🚕 {NAME}</a>
+  <a class="logo" href="{root}"><span class="sign">TAKSİ</span>{NAME}</a>
   <nav>
     <a href="#mahalleler">Mahalleler</a>
-    <a href="{'' if root == './' else root}#havalimani">Havalimanı Transferi</a>
+    <a href="{home}#havalimani">Havalimanı</a>
     <a href="#iletisim">İletişim</a>
   </nav>
   <a class="tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
@@ -103,16 +104,17 @@ def page(path, title, desc, h1, body, area, root="./"):
 <main>
 <section class="hero">
   <h1>{e(h1)}</h1>
-  <p class="lead">7/24 taksi hizmeti · Ortalama birkaç dakikada kapınızda</p>
+  <p class="lead">{lead}</p>
   <div class="cta">{buttons()}</div>
 </section>
 {body}
 </main>
 <footer id="iletisim">
-  <p><strong>{NAME}</strong> · {e(ADDRESS)}, {DISTRICT} / {CITY}</p>
-  <p><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · 7 gün 24 saat</p>
+  <p><strong>{NAME}</strong></p>
+  <p>{e(ADDRESS)}, {DISTRICT} / {CITY}</p>
+  <p>Telefon: <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · Gece gündüz açığız</p>
 </footer>
-<a class="sticky" href="tel:{PHONE_TEL}">📞 Taksi Çağır</a>
+<a class="sticky" href="tel:{PHONE_TEL}">Taksi çağır</a>
 </body>
 </html>
 """
@@ -120,23 +122,9 @@ def page(path, title, desc, h1, body, area, root="./"):
 
 def mahalle_links(root, skip=None):
     items = "".join(
-        f'<li><a href="{root}mahalle/{slug(m)}/">{m} Taksi</a></li>'
+        f'<li><a href="{root}mahalle/{slug(m)}/">{m}</a></li>'
         for m in MAHALLELER if m != skip)
     return f'<ul class="grid">{items}</ul>'
-
-
-FEATURES = """
-<section>
-  <h2>Neden bizi aramalısınız?</h2>
-  <ul class="features">
-    <li><strong>7/24 açık</strong> – Gece, gündüz, bayram demeden.</li>
-    <li><strong>Hızlı yönlendirme</strong> – Size en yakın aracı gönderiyoruz.</li>
-    <li><strong>Taksimetre ile</strong> – Pazarlık yok, sürpriz ücret yok.</li>
-    <li><strong>Havalimanı transferi</strong> – Sabiha Gökçen ve İstanbul Havalimanı.</li>
-    <li><strong>Hastane, okul, iş</strong> – Ümraniye Eğitim ve Araştırma Hastanesi dahil her yere.</li>
-  </ul>
-</section>
-"""
 
 
 def build():
@@ -144,33 +132,28 @@ def build():
 
     files["index.html"] = page(
         "",
-        f"Ümraniye Taksi – 7/24 Taksi Durağı | {PHONE_DISPLAY}",
-        f"Ümraniye'nin tüm mahallelerine 7/24 taksi. Buyaka çevresi ve tüm Ümraniye'den "
-        f"hızlı taksi ve havalimanı transferi için hemen arayın: {PHONE_DISPLAY}.",
-        "Ümraniye Taksi Durağı – 7/24 Taksi Çağır",
+        f"Ümraniye Taksi Durağı | {PHONE_DISPLAY}",
+        f"Ümraniye'de taksi lazımsa arayın: {PHONE_DISPLAY}. Buyaka AVM yanındaki "
+        f"durağımızdan bütün mahallelere ve havalimanlarına gidiyoruz.",
+        NAME,
+        "Gece gündüz açığız. Arayın, size en yakın arabayı gönderelim.",
         f"""
 <section>
-  <h2>Ümraniye'nin her mahallesine taksi</h2>
-  <p>{NAME}, {ADDRESS} konumunda hizmet veriyor. Ümraniye'nin {len(MAHALLELER)}
-  mahallesinin tamamına, Ataşehir, Üsküdar, Çekmeköy ve Sancaktepe'ye taksi
-  gönderiyoruz. Tek yapmanız gereken aramak ve adresinizi söylemek.</p>
+  <h2>Durağımız</h2>
+  <p>Buyaka AVM'deki durağımız, AVM'deki yenileme süresince hemen yanındaki
+  konteynerde. Ümraniye'nin bütün mahallelerine gidiyoruz; Ataşehir, Üsküdar,
+  Çekmeköy ve Sancaktepe'den arayanlara da araba gönderiyoruz.</p>
+  <p>Ücret taksimetreyle. Telefonda adresinizi ya da yakınınızdaki bir yeri
+  söylemeniz yeterli.</p>
 </section>
-{FEATURES}
 <section id="havalimani">
-  <h2>Ümraniye'den havalimanı transferi</h2>
-  <p>Ümraniye'nin her mahallesinden <strong>Sabiha Gökçen Havalimanı</strong> ve
-  <strong>İstanbul Havalimanı</strong>'na taksi gönderiyoruz; havalimanından
-  Ümraniye'ye dönüş için de arayabilirsiniz.</p>
-  <ul class="features">
-    <li><strong>Sabiha Gökçen taksi</strong> – Ümraniye'den Anadolu Yakası'ndaki havalimanına.</li>
-    <li><strong>İstanbul Havalimanı taksi</strong> – Köprü üzerinden Avrupa Yakası'na.</li>
-    <li><strong>Erken uçuşlar</strong> – Sabah erken uçuşunuz varsa bir gün önceden arayıp aracınızı ayırtın.</li>
-    <li><strong>Bagaj</strong> – Valizinizi söyleyin, uygun aracı gönderelim.</li>
-  </ul>
-  <div class="cta">{buttons()}</div>
+  <h2>Havalimanına gidiş</h2>
+  <p>Sabiha Gökçen'e de İstanbul Havalimanı'na da gidiyoruz. Sabah erken
+  uçuşunuz varsa akşamdan arayın, arabayı ayarlayalım. Bagajınız çoksa
+  telefonda söyleyin.</p>
 </section>
 <section id="mahalleler">
-  <h2>Hizmet verdiğimiz mahalleler</h2>
+  <h2>Gittiğimiz mahalleler</h2>
   {mahalle_links("./")}
 </section>
 """,
@@ -181,22 +164,20 @@ def build():
         s = slug(m)
         files[f"mahalle/{s}/index.html"] = page(
             f"mahalle/{s}/",
-            f"{m} Taksi – {m} Mahallesi Taksi Durağı | {DISTRICT}",
-            f"{m} Mahallesi, {DISTRICT} için 7/24 taksi. Bulunduğunuz adrese en yakın "
-            f"aracı gönderiyoruz. Hemen arayın: {PHONE_DISPLAY}.",
-            f"{m} Taksi – {DISTRICT}",
+            f"{m} Taksi | {NAME}",
+            f"{m} Mahallesi'nde taksi lazımsa arayın: {PHONE_DISPLAY}. "
+            f"Ümraniye'de gece gündüz açık taksi durağı.",
+            f"{m} Taksi",
+            f"{m} Mahallesi'ne de geliyoruz. Arayın, yola çıkalım.",
             f"""
 <section>
-  <h2>{m} Mahallesi'nde taksi mi lazım?</h2>
-  <p>{DISTRICT} {m} Mahallesi'nden taksi çağırmak için {PHONE_DISPLAY} numarasını
-  arayın. Telefonda sokak adınızı veya bulunduğunuz yeri söylemeniz yeterli;
-  {m} ve çevresindeki en yakın taksimizi hemen yönlendirelim.</p>
-  <p>{m} Mahallesi'nden Ümraniye merkez, metro istasyonları, hastaneler,
-  AVM'ler ve havalimanlarına gece gündüz ulaşım sağlıyoruz.</p>
+  <p>{m} Mahallesi'nden taksi lazımsa {PHONE_DISPLAY} numarasını arayın. Sokağınızı ya da
+  yakınınızdaki bir yeri söyleyin, en yakın arabamızı gönderelim.</p>
+  <p>Durağımız Buyaka AVM'nin yanında. Ücret taksimetreyle; havalimanına da
+  gidiyoruz.</p>
 </section>
-{FEATURES}
 <section id="mahalleler">
-  <h2>Ümraniye'deki diğer mahalleler</h2>
+  <h2>Diğer mahalleler</h2>
   {mahalle_links("../../", skip=m)}
 </section>
 """,
