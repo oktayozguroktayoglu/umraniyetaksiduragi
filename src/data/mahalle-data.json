@@ -1,0 +1,3166 @@
+{
+ "generated": "2026-11-06",
+ "source": "OpenStreetMap katkıcıları (ODbL), OSRM",
+ "mahalle": {
+  "adem-yavuz": {
+   "osmId": 9462548,
+   "osmName": "Adem Yavuz Mahallesi",
+   "center": {
+    "lat": 41.020808,
+    "lon": 29.154397
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Cami",
+    "Hasan Hüseyin Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Eski Üsküdar Yolu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Huzur",
+     "km": 0.5
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 0.6
+    },
+    {
+     "name": "Dudullu",
+     "km": 1
+    }
+   ],
+   "neighbors": [
+    "cemil-meric",
+    "asagi-dudullu",
+    "parseller",
+    "huzur",
+    "yukari-dudullu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.5,
+     "min": 32
+    },
+    "ist": {
+     "km": 52.7,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 17.5,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 15,
+     "min": 14
+    },
+    "taksim": {
+     "km": 24.9,
+     "min": 24
+    },
+    "harem": {
+     "km": 27.5,
+     "min": 30
+    },
+    "durak": {
+     "km": 2.9,
+     "min": 4
+    }
+   }
+  },
+  "altinsehir": {
+   "osmId": 9462981,
+   "osmName": "Altınşehir Mahallesi",
+   "center": {
+    "lat": 41.012167,
+    "lon": 29.143481
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Seyit Onbaşı Parkı"
+   ],
+   "mosques": [
+    "Hz. Yuşa Camii"
+   ],
+   "schools": [
+    "Hasan Özaydın İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "T.C. Üsküdar 31. Noterliği",
+    "Aliya İzzet Begoviç Kültür ve Eğitim Merkezi"
+   ],
+   "sports": [],
+   "roads": [
+    "Şenel Caddesi",
+    "Sakarya Sokaği",
+    "Kumru Sokağı",
+    "Adilesultan Sokağı",
+    "Tavukçu Yolu Caddesi",
+    "Natoyolu Caddesi",
+    "Tavukçu Yolu Caddesi (Çakmak İstikameti)",
+    "Acısu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Altınşehir",
+     "km": 0.6
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 0.8
+    },
+    {
+     "name": "Ihlamurkuyu",
+     "km": 1.4
+    }
+   ],
+   "neighbors": [
+    "mehmet-akif",
+    "tepeustu",
+    "yukari-dudullu",
+    "adem-yavuz",
+    "tatlisu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.1,
+     "min": 31
+    },
+    "ist": {
+     "km": 51.8,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 17.2,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 14.1,
+     "min": 13
+    },
+    "taksim": {
+     "km": 24.5,
+     "min": 24
+    },
+    "harem": {
+     "km": 25.7,
+     "min": 29
+    },
+    "durak": {
+     "km": 2.1,
+     "min": 3
+    }
+   }
+  },
+  "armaganevler": {
+   "osmId": 9462897,
+   "osmName": "Armağanevler Mahallesi",
+   "center": {
+    "lat": 41.014994,
+    "lon": 29.113892
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Çakmak Parkı",
+    "Erkan Ömerbeyoğlu Parkı"
+   ],
+   "mosques": [
+    "Hz Ali Camii",
+    "Hidayet Camii",
+    "Armağanevler Camii"
+   ],
+   "schools": [
+    "23 Nisan Kaptanoğlu İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [
+    "Çakmak Hotel"
+   ],
+   "publicPlaces": [
+    "Armağanevler Mahallesi Muhtarlığı"
+   ],
+   "sports": [],
+   "roads": [
+    "Neyzen Tevfik Sokağı",
+    "Akdeniz Caddesi",
+    "Şenol Güneş Bulvarı",
+    "Varan Caddesi",
+    "Tütengil Sokağı",
+    "Mithatpaşa Caddesi",
+    "Şehit Emre Büyükyıldırım Sokağı",
+    "23 Nisan Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çakmak",
+     "km": 0.8
+    },
+    {
+     "name": "Yamanevler",
+     "km": 1.1
+    },
+    {
+     "name": "Ihlamurkuyu",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "atakent",
+    "site",
+    "cakmak",
+    "istiklal",
+    "yamanevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 36.9,
+     "min": 33
+    },
+    "ist": {
+     "km": 51.5,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 10.3,
+     "min": 11
+    },
+    "uskudar": {
+     "km": 10.6,
+     "min": 11
+    },
+    "taksim": {
+     "km": 18,
+     "min": 22
+    },
+    "harem": {
+     "km": 22.5,
+     "min": 25
+    },
+    "durak": {
+     "km": 2.5,
+     "min": 3
+    }
+   }
+  },
+  "asagi-dudullu": {
+   "osmId": 9462528,
+   "osmName": "Aşağı Dudullu Mahallesi",
+   "center": {
+    "lat": 41.023626,
+    "lon": 29.165335
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Aşağı Dudullu Köyiçi Camii",
+    "Cami",
+    "Merkez Kaleli Cami",
+    "Bedir Camii"
+   ],
+   "schools": [
+    "Şehit Öğretmen Sevda Aydoğan İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Alemdağ Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Huzur",
+     "km": 0.5
+    },
+    {
+     "name": "Dudullu",
+     "km": 0.9
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 1.4
+    }
+   ],
+   "neighbors": [
+    "huzur",
+    "necip-fazil",
+    "adem-yavuz",
+    "parseller",
+    "cemil-meric"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.5,
+     "min": 32
+    },
+    "ist": {
+     "km": 53.9,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 17.6,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 16.2,
+     "min": 14
+    },
+    "taksim": {
+     "km": 24.9,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.9,
+     "min": 30
+    },
+    "durak": {
+     "km": 4.4,
+     "min": 5
+    }
+   }
+  },
+  "atakent": {
+   "osmId": 9462888,
+   "osmName": "Atakent Mahallesi",
+   "center": {
+    "lat": 41.017038,
+    "lon": 29.107189
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Gençlik Parkı",
+    "Dadaloğlu Parkı",
+    "Kent Park",
+    "Endülüs Parkı",
+    "Pazarcık Parkı"
+   ],
+   "mosques": [
+    "Alparslan Camii",
+    "Nermin İmamoğlu Camii",
+    "Halilurrahman Camii"
+   ],
+   "schools": [
+    "Atakent Doğa Koleji",
+    "Nihat Sami Banarlı Ortaokulu",
+    "Atakent Şehit Selçuk Paker Anadolu Lisesi",
+    "Uğur Okulları Atakent Ümraniye Kampüsü"
+   ],
+   "schoolCount": 10,
+   "hotels": [
+    "Hotel Rina",
+    "The City Suites"
+   ],
+   "publicPlaces": [
+    "Mithatpaşa Enstitü İstanbul İSMEK",
+    "Atakent Mahallesi Muhtarlığı",
+    "İBB Nail Nimet Bayraktar Kütüphanesi",
+    "Nadirkitap",
+    "Ümraniye Şehit Numan Şeref Datlı Polis Merkezi"
+   ],
+   "sports": [],
+   "roads": [
+    "Burç Caddesi",
+    "Atakan Caddesi",
+    "Akdeniz Caddesi",
+    "Hatboyu Caddesi",
+    "Gelibolu Caddesi",
+    "3010. Cadde",
+    "Reşitpaşa Caddesi",
+    "Dadaloğlu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Yamanevler",
+     "km": 0.8
+    },
+    {
+     "name": "Çakmak",
+     "km": 1.1
+    },
+    {
+     "name": "Çarşı",
+     "km": 1.3
+    }
+   ],
+   "neighbors": [
+    "istiklal",
+    "armaganevler",
+    "yamanevler",
+    "site",
+    "esenevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 37.6,
+     "min": 33
+    },
+    "ist": {
+     "km": 51.6,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 10.1,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 9.2,
+     "min": 10
+    },
+    "taksim": {
+     "km": 16.4,
+     "min": 21
+    },
+    "harem": {
+     "km": 22.6,
+     "min": 25
+    },
+    "durak": {
+     "km": 3.4,
+     "min": 4
+    }
+   }
+  },
+  "ataturk": {
+   "osmId": 9462770,
+   "osmName": "Atatürk Mahallesi",
+   "center": {
+    "lat": 41.027474,
+    "lon": 29.092249
+   },
+   "hospitals": [
+    "Ümraniye Verem Savaş Dispanseri"
+   ],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Ümraniye Verem Savaş Dispanser Bahçesi",
+    "Papatya Parkı",
+    "Aslan Yıldırım Parkı",
+    "Mevlana Parkı"
+   ],
+   "mosques": [
+    "Mustafa Ağa Camii",
+    "Cevherağa Camii",
+    "Ümraniye Büyük Merkez Camii",
+    "Medine Cami"
+   ],
+   "schools": [
+    "Ahmet Cevdet Paşa İlkokulu",
+    "Zübeyde Hanım İlkokulu",
+    "Zübeyde Hanım Ortaokulu",
+    "Mehmet Ali Yılmaz İlkokulu"
+   ],
+   "schoolCount": 4,
+   "hotels": [
+    "Ay Otel",
+    "Ramada by Wyndham"
+   ],
+   "publicPlaces": [
+    "Fazlı Aydın Millet Kütüphanesi",
+    "Ümraniye Belediyesi",
+    "Atatürk Mahallesi Muhtarlığı"
+   ],
+   "sports": [],
+   "roads": [
+    "Şile Otoyolu",
+    "Çavuşbaşı Caddesi",
+    "Gümüşdere Sokağı",
+    "Yayla Sokağı",
+    "Fatih Sultan Mehmet Caddesi",
+    "Estergon Caddesi",
+    "Suiş Caddesi",
+    "Tunaboyu Sokağı"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 0.5
+    },
+    {
+     "name": "Ümraniye",
+     "km": 0.7
+    },
+    {
+     "name": "Yamanevler",
+     "km": 1.4
+    }
+   ],
+   "neighbors": [
+    "tantavi",
+    "namik-kemal",
+    "elmalikent",
+    "istiklal",
+    "esenevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 39,
+     "min": 35
+    },
+    "ist": {
+     "km": 51.3,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 9.6,
+     "min": 10
+    },
+    "uskudar": {
+     "km": 7.3,
+     "min": 7
+    },
+    "taksim": {
+     "km": 14.7,
+     "min": 18
+    },
+    "harem": {
+     "km": 20.8,
+     "min": 24
+    },
+    "durak": {
+     "km": 4.6,
+     "min": 5
+    }
+   }
+  },
+  "cakmak": {
+   "osmId": 9462941,
+   "osmName": "Çakmak Mahallesi",
+   "center": {
+    "lat": 41.015051,
+    "lon": 29.126381
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Sevgi Parkı",
+    "Bahar Parkı",
+    "Ağaç Parkı",
+    "Uzun Ayna"
+   ],
+   "mosques": [
+    "Şehit Yurdanur Camii",
+    "Çakmak Şehit Mahmut Coşkunsu Camii",
+    "Çakmak Çarşı Camii"
+   ],
+   "schools": [
+    "MBA Okulları",
+    "Fatih İlkokulu",
+    "Çakmak Şehit Mahmut Coşkunsu Ortaokulu"
+   ],
+   "schoolCount": 3,
+   "hotels": [
+    "Ağaoğlu My City Hotel"
+   ],
+   "publicPlaces": [
+    "Ümraniye Belediyesi Sabahattin Zaim Gençlik ve Kültür Merkezi"
+   ],
+   "sports": [],
+   "roads": [
+    "2. Çevre Yolu",
+    "Varan Caddesi",
+    "Ağaoğlu Sokağı",
+    "Aşık Veysel Caddesi",
+    "Şehit Burak Kurtuluş Caddesi",
+    "Alemdağ Caddesi",
+    "Varan Soakğı",
+    "Tavukçuyolu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Ihlamurkuyu",
+     "km": 0.6
+    },
+    {
+     "name": "Çakmak",
+     "km": 1
+    },
+    {
+     "name": "Altınşehir",
+     "km": 1.2
+    }
+   ],
+   "neighbors": [
+    "tepeustu",
+    "armaganevler",
+    "site",
+    "mehmet-akif",
+    "ihlamurkuyu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.5,
+     "min": 32
+    },
+    "ist": {
+     "km": 51.3,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 12,
+     "min": 14
+    },
+    "uskudar": {
+     "km": 13.6,
+     "min": 12
+    },
+    "taksim": {
+     "km": 19.5,
+     "min": 23
+    },
+    "harem": {
+     "km": 24.1,
+     "min": 27
+    },
+    "durak": {
+     "km": 0.8,
+     "min": 1
+    }
+   }
+  },
+  "camlik": {
+   "osmId": 9462915,
+   "osmName": "Çamlık Mahallesi",
+   "center": {
+    "lat": 41.002621,
+    "lon": 29.124165
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Şair Zihni Parkı",
+    "İkbal 2 Parkı",
+    "İkbal 1 Parkı",
+    "Kahraman Parkı",
+    "Gümüş Parkı"
+   ],
+   "mosques": [
+    "Mustafa Efendi Camii"
+   ],
+   "schools": [
+    "Emrullah Turanlı İlköğretim Okulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "O-1-O-2 Çamlıca Bağlantısı",
+    "Şehit Burak Kurtuluş Caddesi",
+    "İkbal Caddesi",
+    "Turgut Özal Bulvarı",
+    "Şenol Güneş Bulvarı",
+    "Aşık Veysel Caddesi",
+    "Kozyatağı O-2 Bağlantısı"
+   ],
+   "stations": [
+    {
+     "name": "Ihlamurkuyu",
+     "km": 2
+    },
+    {
+     "name": "Altınşehir",
+     "km": 2.1
+    },
+    {
+     "name": "Çakmak",
+     "km": 2.2
+    }
+   ],
+   "neighbors": [
+    "tatlisu",
+    "site",
+    "finanskent",
+    "mehmet-akif",
+    "cakmak"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.2,
+     "min": 32
+    },
+    "ist": {
+     "km": 52.6,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 11.5,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 12.3,
+     "min": 13
+    },
+    "taksim": {
+     "km": 20.8,
+     "min": 23
+    },
+    "harem": {
+     "km": 23.7,
+     "min": 25
+    },
+    "durak": {
+     "km": 2,
+     "min": 3
+    }
+   }
+  },
+  "cemil-meric": {
+   "osmId": 9462984,
+   "osmName": "Cemil Meriç Mahallesi",
+   "center": {
+    "lat": 41.025488,
+    "lon": 29.145169
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Şehit Ahmet Üvenç Parkı"
+   ],
+   "mosques": [
+    "Birlik Cami",
+    "Cami",
+    "Yeşildere Bayraktar Camii",
+    "İmam-ı Şafi Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Çayırönü Caddesi",
+    "29 Ekim Caddesi",
+    "İstiklal Caddesi",
+    "Petrolyolu Caddesi",
+    "Yeşildere Caddesi",
+    "Şile Otoyolu",
+    "Alemdağ Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Parseller",
+     "km": 0.9
+    },
+    {
+     "name": "Altınşehir",
+     "km": 1.1
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 1.2
+    }
+   ],
+   "neighbors": [
+    "ihlamurkuyu",
+    "parseller",
+    "adem-yavuz",
+    "huzur",
+    "tepeustu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 35.9,
+     "min": 34
+    },
+    "ist": {
+     "km": 52,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 14.7,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 14.3,
+     "min": 13
+    },
+    "taksim": {
+     "km": 21.6,
+     "min": 24
+    },
+    "harem": {
+     "km": 26.8,
+     "min": 29
+    },
+    "durak": {
+     "km": 2.1,
+     "min": 3
+    }
+   }
+  },
+  "dumlupinar": {
+   "osmId": 9462671,
+   "osmName": "Dumlupınar Mahallesi",
+   "center": {
+    "lat": 41.049395,
+    "lon": 29.092923
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Dumlupınar Parkı",
+    "Seyrantepe Parkı"
+   ],
+   "mosques": [
+    "Sabır Camii",
+    "Kazım Karabekir Paşa Camii",
+    "İmam Ali Camii",
+    "Merkez Efendi Camii"
+   ],
+   "schools": [
+    "Kazım Karabekir Ortaokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "Dumlupınar Mahallesi Muhtarlığı"
+   ],
+   "sports": [],
+   "roads": [
+    "Çınardibi Sokağı",
+    "Dumlupınar Caddesi",
+    "Malatya Caddesi",
+    "İnönü Caddesi",
+    "Ergeç Caddesi",
+    "Anadolu Caddesi",
+    "Örenay Sokağı",
+    "Demirciler Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 2.6
+    },
+    {
+     "name": "Ümraniye",
+     "km": 2.8
+    },
+    {
+     "name": "Yamanevler",
+     "km": 3.1
+    }
+   ],
+   "neighbors": [
+    "topagaci",
+    "hekimbasi",
+    "kazim-karabekir",
+    "elmalikent",
+    "inkilap"
+   ],
+   "drive": {
+    "saw": {
+     "km": 42,
+     "min": 38
+    },
+    "ist": {
+     "km": 48.3,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 12.2,
+     "min": 14
+    },
+    "uskudar": {
+     "km": 9.3,
+     "min": 11
+    },
+    "taksim": {
+     "km": 15.2,
+     "min": 20
+    },
+    "harem": {
+     "km": 24.3,
+     "min": 29
+    },
+    "durak": {
+     "km": 7.6,
+     "min": 9
+    }
+   }
+  },
+  "elmalikent": {
+   "osmId": 9462686,
+   "osmName": "Elmalıkent Mahallesi",
+   "center": {
+    "lat": 41.037282,
+    "lon": 29.096626
+   },
+   "hospitals": [
+    "Ümraniye Eğitim ve Araştırma Hastanesi"
+   ],
+   "malls": [],
+   "universities": [
+    "29 Mayıs Üniversitesi"
+   ],
+   "parks": [],
+   "mosques": [
+    "Hicret Camii",
+    "Asım Ülker Camii",
+    "Büyük Ümraniye Camii"
+   ],
+   "schools": [
+    "Asım Ülker Anadolu İmam Hatip Lisesi"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "Elmalıkent Mahallesi Muhtarlığı"
+   ],
+   "sports": [],
+   "roads": [
+    "Eşref Bitlis Caddesi",
+    "Diyar Sokağı",
+    "Şile Otoyolu",
+    "Arzuhal Sokağı",
+    "TRT Caddesi",
+    "Atatürk Caddesi",
+    "Fatih Sultan Mehmet Caddesi",
+    "Egemenlik Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 1.3
+    },
+    {
+     "name": "Ümraniye",
+     "km": 1.7
+    },
+    {
+     "name": "Yamanevler",
+     "km": 1.8
+    }
+   ],
+   "neighbors": [
+    "kazim-karabekir",
+    "tantavi",
+    "ataturk",
+    "dumlupinar",
+    "inkilap"
+   ],
+   "drive": {
+    "saw": {
+     "km": 40.2,
+     "min": 36
+    },
+    "ist": {
+     "km": 51.6,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 10.9,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 8.6,
+     "min": 9
+    },
+    "taksim": {
+     "km": 16.2,
+     "min": 20
+    },
+    "harem": {
+     "km": 22.3,
+     "min": 26
+    },
+    "durak": {
+     "km": 5.8,
+     "min": 6
+    }
+   }
+  },
+  "esenevler": {
+   "osmId": 9462845,
+   "osmName": "Esenevler Mahallesi",
+   "center": {
+    "lat": 41.013436,
+    "lon": 29.09167
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Lokman Hekim Parkı - Bilgi Evleri",
+    "Yüksel Parkı",
+    "Ertuvam Parkı",
+    "Safiye Akçasoy Parkı",
+    "Şehit Yalçın Dursun Parkı"
+   ],
+   "mosques": [
+    "Hacı Ömer Karagül Camii",
+    "Rıza Hatun Camii"
+   ],
+   "schools": [
+    "Özel Eyüboğlu Koleji",
+    "Yunus Emre Ortaokulu",
+    "Hasan Tahsin İlkokulu",
+    "Namık Kemal Anadolu İmam Hatip Lisesi"
+   ],
+   "schoolCount": 4,
+   "hotels": [],
+   "publicPlaces": [
+    "Esenevler Mahallesi Muhtarlığı"
+   ],
+   "sports": [
+    "Spor ve Sanat Kompleksi"
+   ],
+   "roads": [
+    "Yunus Emre Caddesi",
+    "Esenevler Caddesi",
+    "Talatpaşa Caddesi",
+    "Lokman Hekim Cd.",
+    "Cengiz Topel Caddesi",
+    "O1-O2 Çamlıca Bağlantısı"
+   ],
+   "stations": [
+    {
+     "name": "Bulgurlu",
+     "km": 1.3
+    },
+    {
+     "name": "Ümraniye",
+     "km": 1.4
+    },
+    {
+     "name": "Çarşı",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "namik-kemal",
+    "istiklal",
+    "atakent",
+    "ataturk",
+    "armaganevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 37.1,
+     "min": 33
+    },
+    "ist": {
+     "km": 52.5,
+     "min": 48
+    },
+    "kadikoy": {
+     "km": 8.2,
+     "min": 9
+    },
+    "uskudar": {
+     "km": 8.1,
+     "min": 8
+    },
+    "taksim": {
+     "km": 15.2,
+     "min": 19
+    },
+    "harem": {
+     "km": 21,
+     "min": 23
+    },
+    "durak": {
+     "km": 4.8,
+     "min": 6
+    }
+   }
+  },
+  "esenkent": {
+   "osmId": 9462498,
+   "osmName": "Esenkent Mahallesi",
+   "center": {
+    "lat": 40.998511,
+    "lon": 29.182813
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Hasan Hüseyin Şentürk Camii",
+    "Sait Kaya",
+    "Ömer Faruk Darende Camii"
+   ],
+   "schools": [
+    "Toki Esenkent Ortaokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Anadolu Otoyolu",
+    "Çetin Emeç Caddesi",
+    "Hoca Nasrettin Caddesi",
+    "Baraj Yolu",
+    "Efkar Sokağı",
+    "Aşık Mahzuni Şerif Caddesi",
+    "Şah Cihan Caddesi",
+    "Kurtuluş Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Meclis",
+     "km": 1.8
+    },
+    {
+     "name": "Çekmeköy",
+     "km": 1.9
+    },
+    {
+     "name": "Necip Fazıl",
+     "km": 2
+    }
+   ],
+   "neighbors": [
+    "madenler",
+    "esensehir",
+    "necip-fazil",
+    "yukari-dudullu",
+    "serifali"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34,
+     "min": 32
+    },
+    "ist": {
+     "km": 55.2,
+     "min": 50
+    },
+    "kadikoy": {
+     "km": 17.1,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 17.1,
+     "min": 14
+    },
+    "taksim": {
+     "km": 24.4,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.5,
+     "min": 29
+    },
+    "durak": {
+     "km": 5.5,
+     "min": 7
+    }
+   }
+  },
+  "esensehir": {
+   "osmId": 9462467,
+   "osmName": "Esenşehir Mahallesi",
+   "center": {
+    "lat": 41.007203,
+    "lon": 29.1687
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Fevzi Çakmak Camii",
+    "Hacı Ferhat Nasır Cami"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "İMES Köprüsü",
+    "Baraj Yolu",
+    "Sarıgazi Yolu Caddesi",
+    "Haseki Sokağı",
+    "Kürkçüler Caddesi",
+    "Natoyolu Caddesi",
+    "Necip Fazıl Bulvarı",
+    "Baraj Yolu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "MODOKO-KEYAP",
+     "km": 0.6
+    },
+    {
+     "name": "Dudullu",
+     "km": 1
+    },
+    {
+     "name": "Necip Fazıl",
+     "km": 1.3
+    }
+   ],
+   "neighbors": [
+    "yukari-dudullu",
+    "necip-fazil",
+    "madenler",
+    "esenkent",
+    "asagi-dudullu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 32.9,
+     "min": 30
+    },
+    "ist": {
+     "km": 53.8,
+     "min": 48
+    },
+    "kadikoy": {
+     "km": 16,
+     "min": 14
+    },
+    "uskudar": {
+     "km": 16,
+     "min": 13
+    },
+    "taksim": {
+     "km": 23.3,
+     "min": 23
+    },
+    "harem": {
+     "km": 28.4,
+     "min": 28
+    },
+    "durak": {
+     "km": 4.1,
+     "min": 6
+    }
+   }
+  },
+  "fatih-sultan-mehmet": {
+   "osmId": 9462835,
+   "osmName": "Fatih Sultan Mehmet Mahallesi",
+   "center": {
+    "lat": 41.037656,
+    "lon": 29.128821
+   },
+   "hospitals": [],
+   "malls": [
+    "Meydan İstanbul Alışveriş ve Yaşam Merkezi",
+    "Buyaka AVM"
+   ],
+   "universities": [],
+   "parks": [
+    "Poligon Parkı"
+   ],
+   "mosques": [
+    "Yeni Camii"
+   ],
+   "schools": [
+    "Palet Anaokulu",
+    "Final Kurs",
+    "Şakire Hanım Özel Eğitim Uygulama Okulu"
+   ],
+   "schoolCount": 3,
+   "hotels": [],
+   "publicPlaces": [
+    "T.C. Üsküdar 37. Noterliği"
+   ],
+   "sports": [
+    "Beşiktaş Nevzat Demir Tesisleri"
+   ],
+   "roads": [
+    "Şile Otoyolu",
+    "Poligon Caddesi",
+    "Şiir Sokağı",
+    "Gümüşsuyu Caddesi",
+    "Fatih Sultan Mehmet Mah.",
+    "Şile Yolu Caddesi",
+    "Çırağan Caddesi",
+    "Balkan Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Ihlamurkuyu",
+     "km": 2
+    },
+    {
+     "name": "Çakmak",
+     "km": 2
+    },
+    {
+     "name": "Parseller",
+     "km": 2.1
+    }
+   ],
+   "neighbors": [
+    "inkilap",
+    "ihlamurkuyu",
+    "cemil-meric",
+    "yamanevler",
+    "kazim-karabekir"
+   ],
+   "drive": {
+    "saw": {
+     "km": 40.4,
+     "min": 40
+    },
+    "ist": {
+     "km": 50.5,
+     "min": 49
+    },
+    "kadikoy": {
+     "km": 15.1,
+     "min": 18
+    },
+    "uskudar": {
+     "km": 12.8,
+     "min": 16
+    },
+    "taksim": {
+     "km": 20.2,
+     "min": 27
+    },
+    "harem": {
+     "km": 27.4,
+     "min": 33
+    },
+    "durak": {
+     "km": 3.7,
+     "min": 9
+    }
+   }
+  },
+  "finanskent": {
+   "osmId": 9462890,
+   "osmName": "Finanskent Mahallesi",
+   "center": {
+    "lat": 41.003264,
+    "lon": 29.10976
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Sinpaş Time ve Park Sitesi"
+   ],
+   "mosques": [
+    "Osmangazi Camii",
+    "T.C.Ümraniye Müftülüğü Hz.Hasan Mescidi",
+    "Finans Merkezi Camii"
+   ],
+   "schools": [
+    "Ümraniye Cumhuriyet Mesleki ve Teknik Anadolu Lisesi",
+    "30 Ağustos İlkokulu",
+    "30 Ağustos Mesleki ve Teknik Anadolu Lisesi",
+    "TÜRKÇİMENTO Mesleki ve Teknik Anadolu Lisesi"
+   ],
+   "schoolCount": 4,
+   "hotels": [],
+   "publicPlaces": [
+    "Sinpaş Palas Finans Şehir Şantiye",
+    "Türkiye Cumhuriyet Merkez Bankası",
+    "Finanskent Mahallesi Muhtarlığı",
+    "Çakmak Polis Merkezi Amirliği"
+   ],
+   "sports": [],
+   "roads": [
+    "Kozyatağı O-2 Bağlantısı",
+    "O-1-O-2 Çamlıca Bağlantısı",
+    "Diriliş Caddesi",
+    "3010. Cadde",
+    "3001. Cadde",
+    "Şenol Güneş Bulvarı",
+    "3008. Cadde",
+    "Rıdvan Dedeoğlu Viyadüğü"
+   ],
+   "stations": [
+    {
+     "name": "Çakmak",
+     "km": 2.2
+    },
+    {
+     "name": "Yamanevler",
+     "km": 2.3
+    },
+    {
+     "name": "Ihlamurkuyu",
+     "km": 2.5
+    }
+   ],
+   "neighbors": [
+    "site",
+    "camlik",
+    "armaganevler",
+    "atakent",
+    "istiklal"
+   ],
+   "drive": {
+    "saw": {
+     "km": 36.3,
+     "min": 32
+    },
+    "ist": {
+     "km": 55,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 11,
+     "min": 11
+    },
+    "uskudar": {
+     "km": 11,
+     "min": 10
+    },
+    "taksim": {
+     "km": 18.3,
+     "min": 19
+    },
+    "harem": {
+     "km": 22.5,
+     "min": 24
+    },
+    "durak": {
+     "km": 4.9,
+     "min": 7
+    }
+   }
+  },
+  "hekimbasi": {
+   "osmId": 9462597,
+   "osmName": "Hekimbaşı Mahallesi",
+   "center": {
+    "lat": 41.059277,
+    "lon": 29.09813
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Hekimbaşı Merkez Cami",
+    "Hekimbaşı Cami",
+    "Hekimbaşı Fatih Cami",
+    "Errahman Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [
+    "Hekimbaşı Mahallesi Muhtarlığı"
+   ],
+   "sports": [
+    "Ümraniye Spor Kompleksi"
+   ],
+   "roads": [
+    "Küçüksu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 3.7
+    },
+    {
+     "name": "Yamanevler",
+     "km": 4
+    },
+    {
+     "name": "Ümraniye",
+     "km": 4
+    }
+   ],
+   "neighbors": [
+    "topagaci",
+    "dumlupinar",
+    "kazim-karabekir",
+    "inkilap",
+    "elmalikent"
+   ],
+   "drive": {
+    "saw": {
+     "km": 43.8,
+     "min": 39
+    },
+    "ist": {
+     "km": 48.3,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 16.3,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 11.1,
+     "min": 12
+    },
+    "taksim": {
+     "km": 17.1,
+     "min": 21
+    },
+    "harem": {
+     "km": 28.7,
+     "min": 31
+    },
+    "durak": {
+     "km": 9.4,
+     "min": 9
+    }
+   }
+  },
+  "huzur": {
+   "osmId": 9462535,
+   "osmName": "Huzur Mahallesi",
+   "center": {
+    "lat": 41.029301,
+    "lon": 29.16133
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Şehit Şerife Bacı Parkı"
+   ],
+   "mosques": [
+    "Cami"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Şile Otoyolu",
+    "Eski Üsküdar Yolu Caddesi",
+    "Abdullah Azam Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Parseller",
+     "km": 0.8
+    },
+    {
+     "name": "Huzur",
+     "km": 0.8
+    },
+    {
+     "name": "Dudullu",
+     "km": 1.6
+    }
+   ],
+   "neighbors": [
+    "parseller",
+    "asagi-dudullu",
+    "adem-yavuz",
+    "cemil-meric",
+    "necip-fazil"
+   ],
+   "drive": {
+    "saw": {
+     "km": 35,
+     "min": 34
+    },
+    "ist": {
+     "km": 52.2,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 16.8,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 14.5,
+     "min": 13
+    },
+    "taksim": {
+     "km": 21.9,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.1,
+     "min": 31
+    },
+    "durak": {
+     "km": 3.7,
+     "min": 6
+    }
+   }
+  },
+  "ihlamurkuyu": {
+   "osmId": 9462968,
+   "osmName": "Ihlamurkuyu Mahallesi",
+   "center": {
+    "lat": 41.024574,
+    "lon": 29.135844
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Trabzonpark Millet Bahçesi"
+   ],
+   "mosques": [
+    "Cami",
+    "Ihlamurkuyu Merkez Camii",
+    "Trabzonpark Camii"
+   ],
+   "schools": [
+    "Eczacı Neşem Özlen Güray Anadolu Lisesi"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Ihlamurkuyu Mah.",
+    "Malazgirt Caddesi",
+    "Şile Otoyolu",
+    "Gümüşsuyu Caddesi",
+    "İstiklal Caddesi",
+    "Petrolyolu Caddesi",
+    "Tepeüstü Kavşağı",
+    "Alemdağ Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Ihlamurkuyu",
+     "km": 0.7
+    },
+    {
+     "name": "Altınşehir",
+     "km": 0.9
+    },
+    {
+     "name": "Çakmak",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "cemil-meric",
+    "tepeustu",
+    "cakmak",
+    "altinsehir",
+    "fatih-sultan-mehmet"
+   ],
+   "drive": {
+    "saw": {
+     "km": 35.8,
+     "min": 34
+    },
+    "ist": {
+     "km": 50.6,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 15.2,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 12.9,
+     "min": 12
+    },
+    "taksim": {
+     "km": 20.3,
+     "min": 23
+    },
+    "harem": {
+     "km": 25.9,
+     "min": 28
+    },
+    "durak": {
+     "km": 1.3,
+     "min": 3
+    }
+   }
+  },
+  "inkilap": {
+   "osmId": 9462650,
+   "osmName": "İnkılap Mahallesi",
+   "center": {
+    "lat": 41.041503,
+    "lon": 29.113762
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Ümraniye Millet Bahçesi",
+    "Dere Parkı"
+   ],
+   "mosques": [
+    "Osmanoğlu cami (yapım aşamasında)",
+    "İlim Sarayı Camii",
+    "Bereket Cami",
+    "Necat Camii"
+   ],
+   "schools": [
+    "Mehmet Akif İnan Ortaokulu",
+    "Haşim İşcan İlkokulu",
+    "Nevzat Ayaz Anadolu Lisesi",
+    "İstanbul Halide Edip Mesleki ve Teknik Anadolu Lisesi"
+   ],
+   "schoolCount": 4,
+   "hotels": [],
+   "publicPlaces": [
+    "İnkılap Mahallesi Muhtarlığı"
+   ],
+   "sports": [],
+   "roads": [
+    "İstanbul 2. Çevre Yolu",
+    "Şile Otoyolu",
+    "Yelkenciler Sokağı",
+    "Sokullu Caddesi",
+    "Parıltı Sokağı",
+    "29 Mayıs Caddesi",
+    "Küçüksu Caddesi",
+    "Dr. Adnan Büyükdeniz Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Yamanevler",
+     "km": 2
+    },
+    {
+     "name": "Çarşı",
+     "km": 2.2
+    },
+    {
+     "name": "Çakmak",
+     "km": 2.3
+    }
+   ],
+   "neighbors": [
+    "kazim-karabekir",
+    "fatih-sultan-mehmet",
+    "elmalikent",
+    "topagaci",
+    "yamanevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 40,
+     "min": 35
+    },
+    "ist": {
+     "km": 51.4,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 12.5,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 10.2,
+     "min": 9
+    },
+    "taksim": {
+     "km": 17.6,
+     "min": 20
+    },
+    "harem": {
+     "km": 24.8,
+     "min": 27
+    },
+    "durak": {
+     "km": 5.6,
+     "min": 5
+    }
+   }
+  },
+  "istiklal": {
+   "osmId": 9462868,
+   "osmName": "İstiklal Mahallesi",
+   "center": {
+    "lat": 41.018578,
+    "lon": 29.100438
+   },
+   "hospitals": [
+    "Özel Sondurak Ümran Tıp Merkezi"
+   ],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Melisa Parkı",
+    "Hacı Arif Şimşek Parkı",
+    "Çimen Parkı",
+    "Necati Çelik Parkı",
+    "Ali Vercetti Parkı"
+   ],
+   "mosques": [
+    "HZ. Hamza Camii",
+    "Birlik Camii",
+    "Şehzade Camii",
+    "Ulu Camii"
+   ],
+   "schools": [
+    "75.Yıl Cumhuriyet Mesleki ve Teknik Anadolu Lisesi",
+    "Prof.Dr.Nabi Avcı Anadolu Lisesi",
+    "Ahmet Kılıçarslan İlkokulu",
+    "İstiklal Şehit Lokman Oktay Ortaokulu"
+   ],
+   "schoolCount": 4,
+   "hotels": [],
+   "publicPlaces": [
+    "Ümraniye İlçe Emniyet Müdürlüğü",
+    "İstiklal Mahallesi Muhtarlığı",
+    "Mehmet Akif Kültür Ve Eğitim Merkezi"
+   ],
+   "sports": [],
+   "roads": [
+    "Dolmabahçe Caddesi",
+    "Şehzade Caddesi",
+    "Marmara Caddesi",
+    "Kavaklıdere Caddesi",
+    "Hatboyu Caddesi",
+    "Anafartalar Caddesi",
+    "Gelibolu Caddesi",
+    "Bağımsızlık Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Yamanevler",
+     "km": 0.9
+    },
+    {
+     "name": "Çarşı",
+     "km": 0.9
+    },
+    {
+     "name": "Ümraniye",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "atakent",
+    "namik-kemal",
+    "esenevler",
+    "armaganevler",
+    "ataturk"
+   ],
+   "drive": {
+    "saw": {
+     "km": 37.4,
+     "min": 33
+    },
+    "ist": {
+     "km": 51.8,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 9.5,
+     "min": 11
+    },
+    "uskudar": {
+     "km": 8.8,
+     "min": 9
+    },
+    "taksim": {
+     "km": 16,
+     "min": 20
+    },
+    "harem": {
+     "km": 22.8,
+     "min": 25
+    },
+    "durak": {
+     "km": 4.1,
+     "min": 4
+    }
+   }
+  },
+  "kazim-karabekir": {
+   "osmId": 9462638,
+   "osmName": "Kazım Karabekir Mahallesi",
+   "center": {
+    "lat": 41.041946,
+    "lon": 29.105455
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Karacaoğlan Parkı"
+   ],
+   "mosques": [
+    "Berat Camii",
+    "Orta Camii",
+    "Meyveli Bahçe Camii",
+    "İmam-ı Gazali Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [
+    "Kazım Karabekir Mahallesi Muhtarlığı",
+    "Kazım Karabekir Polis Karakolu"
+   ],
+   "sports": [],
+   "roads": [
+    "Ordu Caddesi",
+    "Erzurum Caddesi",
+    "Adem Yavuz Caddesi",
+    "Küçük Caddesi",
+    "Hatip Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 1.9
+    },
+    {
+     "name": "Yamanevler",
+     "km": 2
+    },
+    {
+     "name": "Çakmak",
+     "km": 2.5
+    }
+   ],
+   "neighbors": [
+    "inkilap",
+    "elmalikent",
+    "topagaci",
+    "dumlupinar",
+    "yamanevler"
+   ],
+   "drive": {
+    "saw": {
+     "km": 40.3,
+     "min": 36
+    },
+    "ist": {
+     "km": 51.7,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 11.9,
+     "min": 13
+    },
+    "uskudar": {
+     "km": 9.6,
+     "min": 10
+    },
+    "taksim": {
+     "km": 16.9,
+     "min": 21
+    },
+    "harem": {
+     "km": 23.1,
+     "min": 27
+    },
+    "durak": {
+     "km": 5.9,
+     "min": 7
+    }
+   }
+  },
+  "madenler": {
+   "osmId": 9462497,
+   "osmName": "Madenler Mahallesi",
+   "center": {
+    "lat": 41.011859,
+    "lon": 29.183896
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Leylak Parkı",
+    "çamlık sitesi parkı",
+    "Celal Erdoğan Parkı"
+   ],
+   "mosques": [
+    "Hacı Hakkı Ekşi Camii",
+    "Şehit Selçuk Paker Camii"
+   ],
+   "schools": [
+    "İrfan koleji",
+    "Bilfen Esenşehir İlköğretim Okulu",
+    "Madenler Mesleki ve Teknik Anadolu Lisesi",
+    "Toki Madenler Mevlana İlkokulu"
+   ],
+   "schoolCount": 7,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Kemerdere Kavşağı",
+    "Şehit Ünal Kalafat Caddesi",
+    "İdealist Kent Caddesi",
+    "Şile Otoyolu",
+    "Faruk Nafiz Çamlıbel Sokağı",
+    "Palandöken Caddesi",
+    "Arafat Caddesi",
+    "Sarıgazi Yolu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çekmeköy",
+     "km": 0.6
+    },
+    {
+     "name": "Necip Fazıl",
+     "km": 0.6
+    },
+    {
+     "name": "Meclis",
+     "km": 1.3
+    }
+   ],
+   "neighbors": [
+    "necip-fazil",
+    "esensehir",
+    "esenkent",
+    "asagi-dudullu",
+    "yukari-dudullu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 23.2,
+     "min": 32
+    },
+    "ist": {
+     "km": 55.7,
+     "min": 48
+    },
+    "kadikoy": {
+     "km": 17.6,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 17.6,
+     "min": 15
+    },
+    "taksim": {
+     "km": 24.9,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.9,
+     "min": 30
+    },
+    "durak": {
+     "km": 5.5,
+     "min": 7
+    }
+   }
+  },
+  "mehmet-akif": {
+   "osmId": 9462977,
+   "osmName": "Mehmet Akif Mahallesi",
+   "center": {
+    "lat": 41.007502,
+    "lon": 29.137638
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Piri Reis Parkı"
+   ],
+   "mosques": [
+    "Davud Dede Camii",
+    "Mehmed Zahid Kotku Camii",
+    "Hz. Ebubekir Camii"
+   ],
+   "schools": [
+    "Bilfen Yenişehir Koleji",
+    "TEV Uğuz Tarık Demirağ M.A.T.L.",
+    "Özel Çağın Akşam Lisesi",
+    "Mehmet Akif İlkokulu"
+   ],
+   "schoolCount": 8,
+   "hotels": [],
+   "publicPlaces": [
+    "Mehmet Akif Muhtarlığı"
+   ],
+   "sports": [
+    "Okyanusfly"
+   ],
+   "roads": [
+    "Tezcan Caddesi",
+    "Aziz Bulvarı",
+    "Tavukçu Yolu Caddesi",
+    "Öztekin Caddesi",
+    "Şehit Burak Kurtuluş Caddesi",
+    "Elalmış Caddesi",
+    "Tavukçu Yolu Caddesi (İMES İstikameti)",
+    "Azız Bulvarı"
+   ],
+   "stations": [
+    {
+     "name": "Altınşehir",
+     "km": 1
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 1.5
+    },
+    {
+     "name": "Ihlamurkuyu",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "altinsehir",
+    "tatlisu",
+    "tepeustu",
+    "serifali",
+    "camlik"
+   ],
+   "drive": {
+    "saw": {
+     "km": 33,
+     "min": 30
+    },
+    "ist": {
+     "km": 52.8,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 16.1,
+     "min": 14
+    },
+    "uskudar": {
+     "km": 16.1,
+     "min": 13
+    },
+    "taksim": {
+     "km": 23.4,
+     "min": 22
+    },
+    "harem": {
+     "km": 24.9,
+     "min": 27
+    },
+    "durak": {
+     "km": 2.3,
+     "min": 4
+    }
+   }
+  },
+  "namik-kemal": {
+   "osmId": 9462821,
+   "osmName": "Namık Kemal Mahallesi",
+   "center": {
+    "lat": 41.020439,
+    "lon": 29.090572
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Barış Parkı",
+    "Dr. Sadık Ahmet Parkı",
+    "Hacivat Parkı",
+    "Cemre Parkı"
+   ],
+   "mosques": [
+    "TEİAŞ Mescidi",
+    "Hazreti Ömer Camii",
+    "Santral Mustafa Avni Camii",
+    "Dörtyol Camii"
+   ],
+   "schools": [
+    "Ümraniye Şehit Abdullah Yasir Binici İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "Namık Kemal Mahallesi Muhtarlığı",
+    "Ümraniye Tüketici Sorunları İlçe Hakem Heyeti",
+    "Ümraniye Sosyal Hizmet Merkezi",
+    "Namık Kemal Kültür Merkezi"
+   ],
+   "sports": [],
+   "roads": [
+    "Marmara Caddesi",
+    "Değirmen Sokağı",
+    "Sütçü İmam Caddesi",
+    "Hatboyu Caddesi",
+    "Cengiz Topel Caddesi",
+    "Talatpaşa Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Ümraniye",
+     "km": 0.7
+    },
+    {
+     "name": "Çarşı",
+     "km": 0.8
+    },
+    {
+     "name": "Bulgurlu",
+     "km": 1.3
+    }
+   ],
+   "neighbors": [
+    "esenevler",
+    "ataturk",
+    "istiklal",
+    "tantavi",
+    "atakent"
+   ],
+   "drive": {
+    "saw": {
+     "km": 38.2,
+     "min": 34
+    },
+    "ist": {
+     "km": 51.8,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 9.1,
+     "min": 10
+    },
+    "uskudar": {
+     "km": 7.7,
+     "min": 8
+    },
+    "taksim": {
+     "km": 14.8,
+     "min": 19
+    },
+    "harem": {
+     "km": 21.6,
+     "min": 24
+    },
+    "durak": {
+     "km": 4.6,
+     "min": 6
+    }
+   }
+  },
+  "necip-fazil": {
+   "osmId": 9462526,
+   "osmName": "Necip Fazıl Mahallesi",
+   "center": {
+    "lat": 41.018794,
+    "lon": 29.172981
+   },
+   "hospitals": [],
+   "malls": [
+    "Asya Park AVM",
+    "Metrogarden AVM"
+   ],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Dudullu Süleymaniye Camisi",
+    "Cami",
+    "Yavuz Selim Cami",
+    "Hacı Nurten Camii"
+   ],
+   "schools": [
+    "Mustafa Vasıf Karslıgil İlkokulu",
+    "Necip Fazıl Ortaokulu",
+    "Ümraniye Atatürk Mesleki ve Teknik Anadolu Meslek Lisesi"
+   ],
+   "schoolCount": 3,
+   "hotels": [],
+   "publicPlaces": [
+    "Necip Fazıl Kültür ve Eğitim Merkezi"
+   ],
+   "sports": [
+    "Ümraniye Yüzme Havuzu ve Spor Merkezi"
+   ],
+   "roads": [
+    "Şile Otoyolu",
+    "19 Mayıs Caddesi",
+    "Kemerdere Kavşağı",
+    "Alemdağ Caddesi",
+    "Gaffar Okkan Caddesi",
+    "Hamza Yerlikaya Bulvarı",
+    "Necip Fazıl Bulvarı",
+    "İdealist Kent Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Necip Fazıl",
+     "km": 0.6
+    },
+    {
+     "name": "Dudullu",
+     "km": 0.9
+    },
+    {
+     "name": "Huzur",
+     "km": 1.2
+    }
+   ],
+   "neighbors": [
+    "asagi-dudullu",
+    "madenler",
+    "esensehir",
+    "huzur",
+    "adem-yavuz"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.3,
+     "min": 31
+    },
+    "ist": {
+     "km": 54.7,
+     "min": 48
+    },
+    "kadikoy": {
+     "km": 17.4,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 17.4,
+     "min": 14
+    },
+    "taksim": {
+     "km": 24.7,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.8,
+     "min": 29
+    },
+    "durak": {
+     "km": 4.3,
+     "min": 5
+    }
+   }
+  },
+  "parseller": {
+   "osmId": 9462585,
+   "osmName": "Parseller Mahallesi",
+   "center": {
+    "lat": 41.030675,
+    "lon": 29.153813
+   },
+   "hospitals": [],
+   "malls": [
+    "Karınca AVM"
+   ],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Parseller Camii",
+    "Hacı Ramazan Efendi Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Orhangazi Caddesi",
+    "Abdullah Azam Caddesi",
+    "Karadeniz Caddesi",
+    "Şile Otoyolu",
+    "Eski Üsküdar Yolu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Parseller",
+     "km": 0.1
+    },
+    {
+     "name": "Huzur",
+     "km": 1
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 1.6
+    }
+   ],
+   "neighbors": [
+    "huzur",
+    "cemil-meric",
+    "adem-yavuz",
+    "asagi-dudullu",
+    "ihlamurkuyu"
+   ],
+   "drive": {
+    "saw": {
+     "km": 35.4,
+     "min": 34
+    },
+    "ist": {
+     "km": 52.2,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 16.8,
+     "min": 16
+    },
+    "uskudar": {
+     "km": 14.5,
+     "min": 13
+    },
+    "taksim": {
+     "km": 21.9,
+     "min": 24
+    },
+    "harem": {
+     "km": 29.1,
+     "min": 31
+    },
+    "durak": {
+     "km": 3,
+     "min": 5
+    }
+   }
+  },
+  "serifali": {
+   "osmId": 9308675,
+   "osmName": "Şerifali Mahallesi",
+   "center": {
+    "lat": 40.999655,
+    "lon": 29.148089
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [],
+   "mosques": [
+    "Hacı İsmail ve Zehra Alkılıç Camii"
+   ],
+   "schools": [
+    "Boğaziçi As Koleji"
+   ],
+   "schoolCount": 1,
+   "hotels": [
+    "Park Inn by Radisson"
+   ],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Turgut Özal Bulvarı",
+    "Bayraktar Bulvarı",
+    "Alptekin Caddesi",
+    "Yanyol Köprü Bağlantısı",
+    "Alptekin Caddesi Yanyolu",
+    "Türker Caddesi",
+    "Türker Sokağı",
+    "Necip Fazıl Bulvarı"
+   ],
+   "stations": [
+    {
+     "name": "İMES",
+     "km": 0.7
+    },
+    {
+     "name": "Mevlana",
+     "km": 0.9
+    },
+    {
+     "name": "MODOKO-KEYAP",
+     "km": 1.5
+    }
+   ],
+   "neighbors": [
+    "mehmet-akif",
+    "tatlisu",
+    "yukari-dudullu",
+    "altinsehir",
+    "esensehir"
+   ],
+   "drive": {
+    "saw": {
+     "km": 31.6,
+     "min": 29
+    },
+    "ist": {
+     "km": 55.2,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 14.7,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 14.7,
+     "min": 11
+    },
+    "taksim": {
+     "km": 22,
+     "min": 21
+    },
+    "harem": {
+     "km": 27.1,
+     "min": 27
+    },
+    "durak": {
+     "km": 3.3,
+     "min": 4
+    }
+   }
+  },
+  "site": {
+   "osmId": 9462905,
+   "osmName": "Site Mahallesi",
+   "center": {
+    "lat": 41.008878,
+    "lon": 29.116
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Şelale Parkı",
+    "Palmiye Evleri Parkı",
+    "Çocuk Parkı",
+    "Adacık"
+   ],
+   "mosques": [
+    "Refiye Soyak Camii",
+    "Sancaktepe Camii",
+    "Selman-i Farasi Camii"
+   ],
+   "schools": [
+    "sarı papatya anaokulu",
+    "Bahçeşehir Koleji",
+    "Bilge Soyak İlkokulu",
+    "Bilge Soyak Ortaokulu"
+   ],
+   "schoolCount": 7,
+   "hotels": [],
+   "publicPlaces": [
+    "Gülden Soyak Tüfekçi Kültür Merkezi",
+    "Elifçe Şirin Mutfak Organizasyon Evi",
+    "Site Mahallesi Muhtarlığı",
+    "Ümraniye Çocuk Büro Amirliği"
+   ],
+   "sports": [],
+   "roads": [
+    "Atay Caddesi",
+    "Cevahir Caddesi",
+    "Şenol Güneş Bulvarı",
+    "Şelale Caddesi",
+    "Akagündüz Sokağı",
+    "Turgut Özal Bulvarı",
+    "Şehit Emre Büyükyıldırım Sokağı",
+    "Diriliş Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çakmak",
+     "km": 1.4
+    },
+    {
+     "name": "Ihlamurkuyu",
+     "km": 1.7
+    },
+    {
+     "name": "Yamanevler",
+     "km": 1.8
+    }
+   ],
+   "neighbors": [
+    "armaganevler",
+    "finanskent",
+    "camlik",
+    "cakmak",
+    "atakent"
+   ],
+   "drive": {
+    "saw": {
+     "km": 34.6,
+     "min": 32
+    },
+    "ist": {
+     "km": 52.2,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 10.2,
+     "min": 12
+    },
+    "uskudar": {
+     "km": 11.7,
+     "min": 12
+    },
+    "taksim": {
+     "km": 20.1,
+     "min": 22
+    },
+    "harem": {
+     "km": 22.4,
+     "min": 25
+    },
+    "durak": {
+     "km": 2.3,
+     "min": 3
+    }
+   }
+  },
+  "tantavi": {
+   "osmId": 9462693,
+   "osmName": "Tantavi Mahallesi",
+   "center": {
+    "lat": 41.030905,
+    "lon": 29.087262
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Ahmet Niyazi Bey Parkı"
+   ],
+   "mosques": [
+    "Rahmet Camii",
+    "Abdurrahman Külünk Camii"
+   ],
+   "schools": [
+    "Atatürk Ortaokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "Tantavi Mahallesi Muhtarlığı",
+    "Ümraniye İlçe Emniyet Müdürlüğü"
+   ],
+   "sports": [],
+   "roads": [
+    "Tantavi Tüneli",
+    "Egemenlik Caddesi",
+    "Estergon Caddesi",
+    "Köroğlu Caddesi",
+    "Bosna Bulvarı",
+    "Yelda Sokağı",
+    "Suiş Caddesi",
+    "Mavera Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Ümraniye",
+     "km": 0.7
+    },
+    {
+     "name": "Çarşı",
+     "km": 1
+    },
+    {
+     "name": "Bulgurlu",
+     "km": 1.9
+    }
+   ],
+   "neighbors": [
+    "ataturk",
+    "elmalikent",
+    "namik-kemal",
+    "istiklal",
+    "kazim-karabekir"
+   ],
+   "drive": {
+    "saw": {
+     "km": 40.2,
+     "min": 36
+    },
+    "ist": {
+     "km": 51.7,
+     "min": 47
+    },
+    "kadikoy": {
+     "km": 9.5,
+     "min": 9
+    },
+    "uskudar": {
+     "km": 7.2,
+     "min": 7
+    },
+    "taksim": {
+     "km": 14.6,
+     "min": 18
+    },
+    "harem": {
+     "km": 21.8,
+     "min": 24
+    },
+    "durak": {
+     "km": 5.7,
+     "min": 7
+    }
+   }
+  },
+  "tatlisu": {
+   "osmId": 9462938,
+   "osmName": "Tatlısu Mahallesi",
+   "center": {
+    "lat": 41.001798,
+    "lon": 29.133466
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Minik Dostlar Parkı / Kaşif Kalkavan Parkı",
+    "Yavuz Sultan Selim Parkı",
+    "Berrak Parkı",
+    "Gezi Parkı"
+   ],
+   "mosques": [
+    "Sümeyye Hatun Camii",
+    "Korkmaz Camii"
+   ],
+   "schools": [],
+   "schoolCount": 0,
+   "hotels": [
+    "Bof"
+   ],
+   "publicPlaces": [
+    "Mahmut Celalettin Ökten Gençlik Kültür Ve Eğitim Merkezi"
+   ],
+   "sports": [
+    "Hidayet Türkoğlu Basketbol ve Spor Okulları"
+   ],
+   "roads": [
+    "Elalmış Caddesi",
+    "Çetin Caddesi",
+    "Tezcan Caddesi",
+    "Azız Bulvarı",
+    "Aracı Sokağı",
+    "TEM Yan Yol",
+    "Turgut Özal Bulvarı",
+    "Şanlı Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Altınşehir",
+     "km": 1.7
+    },
+    {
+     "name": "İMES",
+     "km": 1.9
+    },
+    {
+     "name": "Kayışdağı",
+     "km": 1.9
+    }
+   ],
+   "neighbors": [
+    "mehmet-akif",
+    "camlik",
+    "serifali",
+    "altinsehir",
+    "cakmak"
+   ],
+   "drive": {
+    "saw": {
+     "km": 33.1,
+     "min": 31
+    },
+    "ist": {
+     "km": 53.1,
+     "min": 48
+    },
+    "kadikoy": {
+     "km": 12.1,
+     "min": 13
+    },
+    "uskudar": {
+     "km": 13.4,
+     "min": 13
+    },
+    "taksim": {
+     "km": 20.7,
+     "min": 23
+    },
+    "harem": {
+     "km": 24.3,
+     "min": 27
+    },
+    "durak": {
+     "km": 2.6,
+     "min": 4
+    }
+   }
+  },
+  "tepeustu": {
+   "osmId": 9462967,
+   "osmName": "Tepeüstü Mahallesi",
+   "center": {
+    "lat": 41.016588,
+    "lon": 29.132827
+   },
+   "hospitals": [],
+   "malls": [
+    "Gamze Outlet"
+   ],
+   "universities": [],
+   "parks": [
+    "Şehit Hacı Alkan Parkı"
+   ],
+   "mosques": [
+    "Güneysu Camii",
+    "Tepeüstü Hüdayi Camii",
+    "Tepeüstü Merkez Camii"
+   ],
+   "schools": [
+    "Asiye Ağaoğlu Anadolu Lisesi"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Eski Kadıköy Yolu Caddesi",
+    "Tavukçu Yolu Caddesi",
+    "Alemdağ Caddesi",
+    "Kaşgarlı Mahmut Caddesi",
+    "Tavukçu Yolu Caddesi (Çakmak İstikameti)"
+   ],
+   "stations": [
+    {
+     "name": "Ihlamurkuyu",
+     "km": 0.4
+    },
+    {
+     "name": "Altınşehir",
+     "km": 0.6
+    },
+    {
+     "name": "Çakmak",
+     "km": 1.3
+    }
+   ],
+   "neighbors": [
+    "cakmak",
+    "ihlamurkuyu",
+    "altinsehir",
+    "mehmet-akif",
+    "cemil-meric"
+   ],
+   "drive": {
+    "saw": {
+     "km": 35,
+     "min": 32
+    },
+    "ist": {
+     "km": 51,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 13.7,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 13.3,
+     "min": 12
+    },
+    "taksim": {
+     "km": 20.7,
+     "min": 23
+    },
+    "harem": {
+     "km": 25.9,
+     "min": 28
+    },
+    "durak": {
+     "km": 0,
+     "min": 1
+    }
+   }
+  },
+  "topagaci": {
+   "osmId": 9462625,
+   "osmName": "Topağacı Mahallesi",
+   "center": {
+    "lat": 41.051942,
+    "lon": 29.10002
+   },
+   "hospitals": [],
+   "malls": [],
+   "universities": [],
+   "parks": [
+    "Kazım Karabekir Parkı"
+   ],
+   "mosques": [
+    "Topağacı Camii",
+    "Mirac Cami",
+    "Mehmed Akif Cami",
+    "Güney Camii"
+   ],
+   "schools": [
+    "Şehit Sevgi Yeşilyurt İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [],
+   "publicPlaces": [
+    "Topağacı Mahallesi Muhtarlığı"
+   ],
+   "sports": [
+    "Ümraniye Belediyesi Beytullah Eroğlu Yüzme Havuzu"
+   ],
+   "roads": [
+    "Adem Yavuz Caddesi",
+    "Asil Caddesi",
+    "Ezber Caddesi",
+    "Dereboyu Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Çarşı",
+     "km": 2.9
+    },
+    {
+     "name": "Yamanevler",
+     "km": 3.2
+    },
+    {
+     "name": "Ümraniye",
+     "km": 3.3
+    }
+   ],
+   "neighbors": [
+    "dumlupinar",
+    "hekimbasi",
+    "kazim-karabekir",
+    "inkilap",
+    "elmalikent"
+   ],
+   "drive": {
+    "saw": {
+     "km": 42.2,
+     "min": 39
+    },
+    "ist": {
+     "km": 48.9,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 13.1,
+     "min": 15
+    },
+    "uskudar": {
+     "km": 9.8,
+     "min": 12
+    },
+    "taksim": {
+     "km": 15.8,
+     "min": 21
+    },
+    "harem": {
+     "km": 24.5,
+     "min": 29
+    },
+    "durak": {
+     "km": 7.8,
+     "min": 9
+    }
+   }
+  },
+  "yamanevler": {
+   "osmId": 9462798,
+   "osmName": "Yamanevler Mahallesi",
+   "center": {
+    "lat": 41.02658,
+    "lon": 29.111076
+   },
+   "hospitals": [
+    "Üsküdar Üniversitesi Diş Hastanesi",
+    "Erdem Hastanesi"
+   ],
+   "malls": [
+    "Canpark Alışveriş Merkezi"
+   ],
+   "universities": [],
+   "parks": [
+    "Şehir Onur Kılıç Parkı"
+   ],
+   "mosques": [
+    "İmam-ı Azam Camii",
+    "Mustafa Yaman Camii",
+    "Deniz Sanayi Sitesi Camii"
+   ],
+   "schools": [
+    "İstanbul-Anadolu Ümraniye E-sınav Salon-1",
+    "Ümraniye Merkez İmam Hatip Ortaokulu",
+    "Ümraniye Merkez Anadolu Lisesi",
+    "Yamanevler Şehit Emre Büyükyıldırım Ortaokulu"
+   ],
+   "schoolCount": 6,
+   "hotels": [
+    "DoubleTree by Hilton Istanbul Umraniye",
+    "Mercure Hotel"
+   ],
+   "publicPlaces": [
+    "Yamanevler Mahallesi Muhtarlığı",
+    "Haldun Alagaş Şehir Tiyatroları ve Ümraniye Sahnesi"
+   ],
+   "sports": [
+    "Haldun Alagaş Spor Kompleksi",
+    "Haldun Alagaş Spor Salonu"
+   ],
+   "roads": [
+    "Şile Otoyolu",
+    "Ahmet Tevfik İleri Caddesi",
+    "Fırtına Sokağı",
+    "Fatih Sultan Mehmet Caddesi",
+    "Haldun Alagaş Caddesi",
+    "Küçüksu Caddesi",
+    "Dr. Fazıl Küçük Caddesi",
+    "Alemdağ Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "Yamanevler",
+     "km": 0.3
+    },
+    {
+     "name": "Çakmak",
+     "km": 0.8
+    },
+    {
+     "name": "Çarşı",
+     "km": 1.2
+    }
+   ],
+   "neighbors": [
+    "atakent",
+    "istiklal",
+    "armaganevler",
+    "ataturk",
+    "inkilap"
+   ],
+   "drive": {
+    "saw": {
+     "km": 37.7,
+     "min": 34
+    },
+    "ist": {
+     "km": 50.7,
+     "min": 45
+    },
+    "kadikoy": {
+     "km": 12.3,
+     "min": 13
+    },
+    "uskudar": {
+     "km": 10.2,
+     "min": 11
+    },
+    "taksim": {
+     "km": 17.6,
+     "min": 21
+    },
+    "harem": {
+     "km": 24.4,
+     "min": 26
+    },
+    "durak": {
+     "km": 3.3,
+     "min": 4
+    }
+   }
+  },
+  "yukari-dudullu": {
+   "osmId": 9308676,
+   "osmName": "Yukarı Dudullu Mahallesi",
+   "center": {
+    "lat": 41.009997,
+    "lon": 29.155706
+   },
+   "hospitals": [],
+   "malls": [
+    "Metro Corner AVM"
+   ],
+   "universities": [],
+   "parks": [
+    "Ümraniye Osmangazi Millet Bahçesi",
+    "Çırçır Parkı"
+   ],
+   "mosques": [
+    "Modoko Camii",
+    "Keyap Camii",
+    "Tuğlaharmanlar Camii",
+    "Merkez Baba Cami"
+   ],
+   "schools": [
+    "İnanç Türkeş İlkokulu"
+   ],
+   "schoolCount": 1,
+   "hotels": [
+    "Zin D Home Dudullu Suits"
+   ],
+   "publicPlaces": [],
+   "sports": [],
+   "roads": [
+    "Necip Fazıl Bulvarı",
+    "Natoyolu Caddesi",
+    "Tavukçuyolu Caddesi",
+    "Bayraktar Bulvarı",
+    "Keyap Caddesi",
+    "Alemdağ Caddesi",
+    "Tavukçu Yolu Caddesi (İMES İstikameti)",
+    "Bayrak Caddesi"
+   ],
+   "stations": [
+    {
+     "name": "MODOKO-KEYAP",
+     "km": 0.6
+    },
+    {
+     "name": "İmam Hatip Lisesi",
+     "km": 0.8
+    },
+    {
+     "name": "Dudullu",
+     "km": 0.9
+    }
+   ],
+   "neighbors": [
+    "altinsehir",
+    "esensehir",
+    "adem-yavuz",
+    "serifali",
+    "mehmet-akif"
+   ],
+   "drive": {
+    "saw": {
+     "km": 32.8,
+     "min": 30
+    },
+    "ist": {
+     "km": 52.5,
+     "min": 46
+    },
+    "kadikoy": {
+     "km": 15.9,
+     "min": 13
+    },
+    "uskudar": {
+     "km": 15.9,
+     "min": 13
+    },
+    "taksim": {
+     "km": 23.2,
+     "min": 22
+    },
+    "harem": {
+     "km": 28.2,
+     "min": 28
+    },
+    "durak": {
+     "km": 2.8,
+     "min": 4
+    }
+   }
+  }
+ }
+}
