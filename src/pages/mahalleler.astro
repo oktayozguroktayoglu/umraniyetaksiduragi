@@ -1,8 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { MAHALLELER, PHONE_DISPLAY, PHONE_TEL } from '../data/site.js';
-import { dataOf } from '../lib/mahalle.js';
-const rows = MAHALLELER.map((m) => ({ m, d: dataOf(m.slug) }));
+import MahalleGrid from '../components/MahalleGrid.astro';
 ---
 <Base
   title="Ümraniye Mahalleleri Taksi | 37 Mahalleye Taksi Durağı"
@@ -18,14 +17,7 @@ const rows = MAHALLELER.map((m) => ({ m, d: dataOf(m.slug) }));
   </section>
   <section class="sec">
     <div class="wrap">
-      <ul class="mah-grid">
-        {rows.map(({ m, d }) => (
-          <li><a href={m.url}>{m.name} Taksi
-            {d.stations?.[0] && <small>En yakın istasyon: {d.stations[0].name}</small>}
-            {d.drive?.saw && <small>Sabiha Gökçen ~{d.drive.saw.min} dk</small>}
-          </a></li>
-        ))}
-      </ul>
+      <MahalleGrid id="tummah" detail="full" />
     </div>
   </section>
 </Base>

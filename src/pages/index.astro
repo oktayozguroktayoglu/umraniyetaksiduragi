@@ -2,6 +2,9 @@
 import Base from '../layouts/Base.astro';
 import { BRAND, PHONE_DISPLAY, PHONE_TEL, MAHALLELER, SERVICES, DESTINATIONS, waLink, SITE_URL } from '../data/site.js';
 import { dataOf, fmtKm } from '../lib/mahalle.js';
+import Trust from '../components/Trust.astro';
+import MahalleGrid from '../components/MahalleGrid.astro';
+import MapBox from '../components/MapBox.astro';
 
 const durak = dataOf('tepeustu');
 const drives = DESTINATIONS.map((d) => ({ ...d, ...(durak.drive?.[d.key] || {}) })).filter((d) => d.min);
@@ -54,10 +57,12 @@ const schema = [
     </div>
   </section>
 
+  <Trust />
+
   <section class="sec">
     <div class="wrap">
       <div class="sec-head"><h2>Taksi çağırmak 3 adım</h2></div>
-      <div class="grid g3 steps">
+      <div class="grid g3 steps reveal">
         <div class="card"><h3>Arayın veya yazın</h3><p>{PHONE_DISPLAY} numarasını arayın ya da WhatsApp’tan mesaj atın.</p></div>
         <div class="card"><h3>Konumunuzu paylaşın</h3><p>Mahalle, sokak ya da site adını söyleyin; WhatsApp’tan konum göndermek en hızlısı.</p></div>
         <div class="card"><h3>Araç kapınızda</h3><p>En yakın aracımız adresinize yönlendirilir, taksimetreyle yolculuğunuz başlar.</p></div>
@@ -71,19 +76,14 @@ const schema = [
         <h2>Ümraniye’nin 37 mahallesine taksi</h2>
         <p>Mahallenizi seçin; o mahalledeki öne çıkan noktaları, en yakın metro istasyonunu ve havalimanlarına mesafeyi görün.</p>
       </div>
-      <ul class="mah-grid">
-        {MAHALLELER.map((m) => {
-          const d = dataOf(m.slug);
-          return <li><a href={m.url}>{m.name} Taksi{d.drive?.durak && m.slug !== 'tepeustu' && <small>Duraktan ~{d.drive.durak.min} dk</small>}{m.slug === 'tepeustu' && <small>Durağımız burada</small>}</a></li>;
-        })}
-      </ul>
+      <MahalleGrid id="anamah" />
     </div>
   </section>
 
   <section class="sec">
     <div class="wrap">
       <div class="sec-head"><h2>Hizmetlerimiz</h2></div>
-      <div class="grid g3">
+      <div class="grid g3 reveal">
         {SERVICES.map((s) => (
           <div class="card"><h3>{s.title}</h3><p>{s.short}</p><a class="more" href={`/hizmetler/${s.slug}/`}>Detaylar →</a></div>
         ))}
@@ -106,7 +106,16 @@ const schema = [
   <section class="sec">
     <div class="wrap">
       <div class="sec-head"><h2>Sık sorulan sorular</h2></div>
+      <div>
       {faq.map(([q, a]) => <details class="faq"><summary>{q}</summary><p>{a}</p></details>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="sec-head"><h2>Durağımız nerede?</h2><p>Durağımız Ümraniye Tepeüstü Mahallesi’nde. Araçlarımız buradan Ümraniye’nin tüm mahallelerine çıkıyor.</p></div>
+      <MapBox />
     </div>
   </section>
 

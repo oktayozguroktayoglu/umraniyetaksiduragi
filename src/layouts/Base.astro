@@ -72,6 +72,8 @@ const nav = [
   <script type="application/ld+json" set:html={ld} />
 </head>
 <body>
+  <script is:inline>document.documentElement.classList.add("js")</script>
+  <a class="skip" href="#icerik">İçeriğe geç</a>
   <header class="top">
     <div class="wrap top-in">
       <a class="logo" href="/" aria-label={`${BRAND} ana sayfa`}>
@@ -95,7 +97,7 @@ const nav = [
     </nav>
   )}
 
-  <main>
+  <main id="icerik">
     <slot />
   </main>
 
@@ -150,6 +152,30 @@ const nav = [
         { enableHighAccuracy: true, timeout: 5000, maximumAge: 60000 }
       );
     });
+    // Mahalle arama kutusu
+    document.querySelectorAll('[data-mah-filter]').forEach(function (inp) {
+      var list = document.getElementById(inp.getAttribute('data-mah-filter'));
+      var empty = list && list.nextElementSibling;
+      var n = function (s) { return s.toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i'); };
+      inp.addEventListener('input', function () {
+        var q = n(inp.value.trim()), shown = 0;
+        list.querySelectorAll('li').forEach(function (li) { var ok = !q || n(li.textContent).indexOf(q) > -1; li.hidden = !ok; if (ok) shown++; });
+        if (empty) empty.style.display = shown ? 'none' : 'block';
+      });
+    });
+    // Harita: sadece tıklanınca yüklenir (sayfa hızı)
+    document.querySelectorAll('[data-map-src]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = document.createElement('iframe');
+        f.src = b.getAttribute('data-map-src'); f.title = 'Durak konumu haritası'; f.loading = 'lazy';
+        b.parentNode.appendChild(f); b.remove();
+      });
+    });
+    // Kaydırınca yumuşak görünme
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); }); }
     // Arama/WhatsApp tıklamalarını Google Analytics kuruluysa ölç
     document.addEventListener('click', function (ev) {
       var a = ev.target.closest && ev.target.closest('[data-ev]');
