@@ -1,17 +1,7 @@
 // Mahalle sayfalarının içeriği: OpenStreetMap/OSRM verisinden (src/data/mahalle-data.json) üretilir.
 import { MAHALLELER, DESTINATIONS, BRAND, PHONE_DISPLAY } from '../data/site.js';
+import raw from '../data/mahalle-data.json';
 
-let raw = { mahalle: {} };
-try {
-  const mods = import.meta.glob('../data/mahalle-data.json', { eager: true });
-  const m = Object.values(mods)[0];
-  if (m) raw = m.default || m;
-} catch {}
-if (typeof process !== "undefined" && process.env.MOCK) {
-  const mods = import.meta.glob('../data/mahalle-data.mock.json', { eager: true });
-  const m = Object.values(mods)[0];
-  if (m) raw = m.default || m;
-}
 export const DATA = raw;
 export const bySlug = Object.fromEntries(MAHALLELER.map((m) => [m.slug, m]));
 export const dataOf = (slug) => raw.mahalle?.[slug] || {};
