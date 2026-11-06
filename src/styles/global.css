@@ -150,3 +150,37 @@ details.faq p { margin: 10px 0 0; color: var(--ink2); }
   .cb-wa .long { display: none; }
 }
 @media (min-width: 521px) { .cb-wa .short { display: none; } }
+
+/* Taksi tepe lambası logosu */
+.roofsign { display: inline-flex; flex-direction: column; align-items: center; flex: none; }
+.rs-body {
+  position: relative; display: block; padding: 5px 9px 4px;
+  border-radius: 9px 9px 3px 3px;
+  background: linear-gradient(180deg, #ffe680 0%, #ffc400 45%, #e0a800 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75), inset 0 -2px 0 rgba(0,0,0,.18), 0 0 0 1px #b88a00;
+  overflow: hidden;
+}
+.rs-body::after { /* plastik parlama */
+  content: ''; position: absolute; left: 6%; right: 6%; top: 1px; height: 38%;
+  border-radius: 8px 8px 50% 50%; background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0));
+  pointer-events: none;
+}
+.rs-text {
+  position: relative; z-index: 1; display: block;
+  font: 900 13px/1 system-ui, Arial, sans-serif; letter-spacing: .12em; color: #111;
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+.rs-base { /* tavana oturan siyah ayak */
+  display: block; width: 116%; height: 4px; margin-top: -1px; border-radius: 0 0 4px 4px;
+  background: linear-gradient(180deg, #333, #000);
+}
+.roofsign { animation: rs-glow 7s infinite; }
+@keyframes rs-glow {
+  0%, 78%, 100% { filter: drop-shadow(0 0 6px rgba(255,196,0,.55)); opacity: 1; }
+  80% { filter: none; opacity: .45; }
+  82% { filter: drop-shadow(0 0 10px rgba(255,196,0,.9)); opacity: 1; }
+  84% { filter: none; opacity: .45; }
+  86% { filter: drop-shadow(0 0 14px rgba(255,210,60,1)); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .roofsign { animation: none; filter: drop-shadow(0 0 6px rgba(255,196,0,.55)); } }
+@media (max-width: 520px) { .rs-text { font-size: 11px; } .rs-body { padding: 4px 7px 3px; } }
