@@ -22,13 +22,14 @@ const norm = (s) =>
 
 async function overpass(query) {
   let lastErr;
-  for (let attempt = 0; attempt < 6; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const url = OVERPASS[attempt % OVERPASS.length];
     try {
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'content-type': 'application/x-www-form-urlencoded', 'user-agent': UA },
         body: 'data=' + encodeURIComponent(query),
+        signal: AbortSignal.timeout(100000),
       });
       if (!res.ok) throw new Error(`${url} HTTP ${res.status}`);
       return await res.json();
@@ -64,7 +65,7 @@ out tags center;`;
     const j = await overpass(q);
     rels = j.elements.filter((e) => e.tags?.name);
     const hits = MAHALLELER.filter((m) => rels.some((r) => norm(r.tags.name) === norm(m.name))).length;
-    console.log(`admin_level=${level}: ${rels.length} ilişki, ${hits} eşleşme`);
+    console.log(new Date().toISOString(), `admin_level=${level}: ${rels.length} ilişki, ${hits} eşleşme`);
     if (hits >= 30) break;
   }
 
@@ -93,6 +94,7 @@ out tags center;`);
 
   for (const [slug, d] of Object.entries(found)) {
     const areaId = 3600000000 + d.osmId;
+    console.log('sorgu:', slug);
     const j = await overpass(`[out:json][timeout:120];
 area(id:${areaId})->.a;
 (
@@ -151,7 +153,7 @@ out tags center;`);
   let table;
   for (let a = 0; a < 4 && !table; a++) {
     try {
-      const r = await fetch(url, { headers: { 'user-agent': UA } });
+      const r = await fetch(url, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(60000) });
       const j = await r.json();
       if (j.code === 'Ok') table = j;
       else throw new Error(j.code);
