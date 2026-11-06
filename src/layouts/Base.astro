@@ -1,0 +1,160 @@
+---
+import '../styles/global.css';
+import { SITE_URL, BRAND, PHONE_DISPLAY, PHONE_TEL, ADDRESS, MAHALLELER, SERVICES, waLink } from '../data/site.js';
+import { DATA } from '../lib/mahalle.js';
+
+const { title, description, crumbs = [], schema = [], ogType = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+const durak = DATA.mahalle?.tepeustu?.center;
+
+const business = {
+  '@type': 'LocalBusiness',
+  '@id': SITE_URL + '/#durak',
+  name: BRAND,
+  description: 'Ümraniye’nin 37 mahallesine taksi hizmeti veren taksi durağı.',
+  url: SITE_URL + '/',
+  telephone: PHONE_TEL,
+  image: SITE_URL + '/og.png',
+  priceRange: '₺₺',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: ADDRESS.street,
+    addressLocality: ADDRESS.district,
+    addressRegion: ADDRESS.city,
+    addressCountry: ADDRESS.country,
+  },
+  ...(durak ? { geo: { '@type': 'GeoCoordinates', latitude: durak.lat, longitude: durak.lon } } : {}),
+  areaServed: [
+    { '@type': 'City', name: 'Ümraniye' },
+    ...MAHALLELER.map((m) => ({ '@type': 'Place', name: `${m.name} Mahallesi, Ümraniye` })),
+  ],
+};
+const graph = [
+  business,
+  { '@type': 'WebSite', '@id': SITE_URL + '/#site', url: SITE_URL + '/', name: BRAND, inLanguage: 'tr-TR', publisher: { '@id': business['@id'] } },
+  ...(crumbs.length
+    ? [{
+        '@type': 'BreadcrumbList',
+        itemListElement: [['Ana Sayfa', '/'], ...crumbs].map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: SITE_URL + p })),
+      }]
+    : []),
+  ...schema,
+];
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+const nav = [
+  ['Mahalleler', '/mahalleler/'],
+  ['Havalimanı', '/hizmetler/sabiha-gokcen-taksi/'],
+  ['Hizmetler', '/hizmetler/'],
+  ['İletişim', '/iletisim/'],
+];
+---
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="theme-color" content="#111111" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:site_name" content={BRAND} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={SITE_URL + '/og.png'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="geo.region" content="TR-34" />
+  <meta name="geo.placename" content="Ümraniye, İstanbul" />
+  {durak && <meta name="geo.position" content={`${durak.lat};${durak.lon}`} />}
+  <script type="application/ld+json" set:html={ld} />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="logo" href="/" aria-label={`${BRAND} ana sayfa`}>
+        <span class="logo-mark" aria-hidden="true">TAKSİ</span>
+        <span class="logo-text">{BRAND}</span>
+      </a>
+      <nav class="nav" aria-label="Ana menü">
+        {nav.map(([t, h]) => <a href={h}>{t}</a>)}
+      </nav>
+      <a class="btn btn-call top-call" href={`tel:${PHONE_TEL}`} data-ev="call_header">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        {PHONE_DISPLAY}
+      </a>
+    </div>
+  </header>
+
+  {crumbs.length > 0 && (
+    <nav class="crumbs wrap" aria-label="Sayfa yolu">
+      <a href="/">Ana Sayfa</a>
+      {crumbs.map(([t, h], i) => (i === crumbs.length - 1 ? <span> › {t}</span> : <span> › <a href={h}>{t}</a></span>))}
+    </nav>
+  )}
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div>
+        <p class="foot-brand">{BRAND}</p>
+        <p>{ADDRESS.street}, {ADDRESS.district} / {ADDRESS.city}</p>
+        <p><a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></p>
+        <p><a href={waLink()} rel="noopener">WhatsApp ile yazın</a></p>
+      </div>
+      <div>
+        <p class="foot-h">Hizmetler</p>
+        <ul>{SERVICES.map((s) => <li><a href={`/hizmetler/${s.slug}/`}>{s.title}</a></li>)}</ul>
+      </div>
+      <div class="foot-mah">
+        <p class="foot-h">Ümraniye mahalleleri</p>
+        <ul class="cols">{MAHALLELER.map((m) => <li><a href={m.url}>{m.name} Taksi</a></li>)}</ul>
+      </div>
+    </div>
+    <div class="wrap foot-note">
+      <p>© {new Date().getFullYear()} {BRAND}. Harita verileri © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap katkıcıları</a>. Mesafe ve süreler trafiksiz tahminidir.</p>
+    </div>
+  </footer>
+
+  <div class="callbar" role="group" aria-label="Hızlı iletişim">
+    <a class="cb-call" href={`tel:${PHONE_TEL}`} data-ev="call_bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Hemen Ara
+    </a>
+    <a class="cb-wa" href={waLink()} rel="noopener" data-ev="wa_bar" data-wa-loc>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+      <span class="long">WhatsApp’tan Konum Gönder</span><span class="short">WhatsApp</span>
+    </a>
+  </div>
+
+  <script is:inline>
+    // WhatsApp: izin verilirse konum bağlantısını mesaja ekler
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('[data-wa-loc]');
+      if (!a || !navigator.geolocation) return;
+      ev.preventDefault();
+      var base = a.href, done = false;
+      var go = function (url) { if (done) return; done = true; window.location.href = url; };
+      setTimeout(function () { go(base); }, 6000);
+      navigator.geolocation.getCurrentPosition(
+        function (p) {
+          var loc = 'https://maps.google.com/?q=' + p.coords.latitude.toFixed(6) + ',' + p.coords.longitude.toFixed(6);
+          go(base + encodeURIComponent(' Konumum: ' + loc));
+        },
+        function () { go(base); },
+        { enableHighAccuracy: true, timeout: 5000, maximumAge: 60000 }
+      );
+    });
+    // Arama/WhatsApp tıklamalarını Google Analytics kuruluysa ölç
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('[data-ev]');
+      if (a && window.gtag) window.gtag('event', a.getAttribute('data-ev'), { page_path: location.pathname });
+    });
+  </script>
+</body>
+</html>

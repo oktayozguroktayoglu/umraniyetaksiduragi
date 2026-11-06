@@ -1,0 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import { PHONE_DISPLAY, PHONE_TEL } from '../data/site.js';
+---
+<Base title="Sayfa bulunamadı | Ümraniye Taksi Durağı" description="Aradığınız sayfa bulunamadı.">
+  <section class="page-head"><div class="wrap"><h1>Sayfa bulunamadı</h1><p>Taksi için bizi doğrudan arayabilirsiniz.</p>
+  <a class="btn btn-call" href={`tel:${PHONE_TEL}`}>Ara: {PHONE_DISPLAY}</a> <a class="btn btn-ghost" href="/">Ana sayfa</a></div></section>
+</Base>

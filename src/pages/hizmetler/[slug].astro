@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SERVICES, MAHALLELER, DESTINATIONS, PHONE_DISPLAY, PHONE_TEL, SITE_URL, waLink } from '../../data/site.js';
+import { dataOf, fmtKm } from '../../lib/mahalle.js';
+export function getStaticPaths() {
+  return SERVICES.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+const { s } = Astro.props;
+const dest = s.dest && DESTINATIONS.find((d) => d.key === s.dest);
+const rows = dest
+  ? MAHALLELER.map((m) => ({ m, x: dataOf(m.slug).drive?.[dest.key] })).filter((r) => r.x).sort((a, b) => a.x.min - b.x.min)
+  : [];
+const faq = dest
+  ? [
+      [`Ümraniye’den ${dest.name}’na taksi ne kadar sürer?`, rows.length ? `Mahalleye göre trafiksiz yaklaşık ${rows[0].x.min}–${rows[rows.length - 1].x.min} dakika sürer. Yoğun saatlerde süre uzayabilir; uçuşunuzdan en az 2,5-3 saat önce yola çıkmanızı öneririz.` : 'Süre trafiğe ve mahalleye göre değişir; aradığınızda size tahmini süreyi söyleriz.'],
+      [`${dest.short} taksi ücreti ne kadar?`, 'Ücret taksimetreyle, İBB’nin güncel tarifesine göre hesaplanır. Yola çıkmadan önce tahmini tutarı telefonda sorabilirsiniz.'],
+      ['Önceden taksi ayarlayabilir miyim?', 'Evet. Uçuş saatinizi ve adresinizi bildirin, aracı belirttiğiniz saatte kapınıza gönderelim.'],
+    ]
+  : [
+      [`${s.title} için nasıl taksi çağırırım?`, `${PHONE_DISPLAY} numarasını arayın ya da WhatsApp’tan yazın; adresinizi ve gideceğiniz yeri söylemeniz yeterli.`],
+      ['Ücret nasıl hesaplanır?', 'Şehir içinde taksimetreyle, İBB tarifesine göre. Şehirlerarası yolculuklarda tutarı yola çıkmadan önce birlikte netleştiriyoruz.'],
+    ];
+const schema = [
+  { '@type': 'TaxiService', name: s.title, serviceType: 'Taksi', url: `${SITE_URL}/hizmetler/${s.slug}/`, provider: { '@id': SITE_URL + '/#durak' }, areaServed: { '@type': 'City', name: 'Ümraniye, İstanbul' } },
+  { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+<Base title={`${s.title} | Ümraniye Taksi Durağı`} description={`${s.short} Taksi çağırmak için ${PHONE_DISPLAY}.`} crumbs={[['Hizmetler', '/hizmetler/'], [s.title, `/hizmetler/${s.slug}/`]]} schema={schema}>
+  <section class="page-head"><div class="wrap"><h1>{s.title}</h1><p>{s.short}</p>
+    <div class="hero-cta"><a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_service">Hemen Ara: {PHONE_DISPLAY}</a>
+    <a class="btn btn-wa" href={waLink(s.title + ' için. ')} rel="noopener" data-ev="wa_service">WhatsApp</a></div></div></section>
+  <div class="wrap layout">
+    <article class="prose">
+      {s.body.map((p) => <p>{p}</p>)}
+      {rows.length > 0 && (<>
+        <h2>Ümraniye mahallelerinden {dest.short} mesafeleri</h2>
+        <table class="dist"><thead><tr><th>Mahalle</th><th>Yol</th><th>Trafiksiz süre</th></tr></thead>
+        <tbody>{rows.map(({ m, x }) => <tr><td><a href={m.url}>{m.name}</a></td><td>~{fmtKm(x.km)} km</td><td>~{x.min} dk</td></tr>)}</tbody></table>
+        <p class="note">Mahalle merkezinden, trafiksiz koşullar için hesaplanmış tahmini değerlerdir.</p>
+      </>)}
+      <h2>Sık sorulan sorular</h2>
+      {faq.map(([q, a]) => <details class="faq"><summary>{q}</summary><p>{a}</p></details>)}
+    </article>
+    <aside class="side"><div class="card"><h3>Taksi çağır</h3>
+      <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_side">{PHONE_DISPLAY}</a>
+      <a class="btn btn-wa" href={waLink()} rel="noopener" data-ev="wa_side" data-wa-loc>WhatsApp</a></div>
+      <div class="card"><h3>Diğer hizmetler</h3><ul>{SERVICES.filter((x) => x.slug !== s.slug).map((x) => <li><a href={`/hizmetler/${x.slug}/`}>{x.title}</a></li>)}</ul></div>
+    </aside>
+  </div>
+</Base>

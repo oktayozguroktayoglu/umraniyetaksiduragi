@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, PHONE_DISPLAY, PHONE_TEL, MAHALLELER, SERVICES, DESTINATIONS, waLink, SITE_URL } from '../data/site.js';
+import { dataOf, fmtKm } from '../lib/mahalle.js';
+
+const durak = dataOf('tepeustu');
+const drives = DESTINATIONS.map((d) => ({ ...d, ...(durak.drive?.[d.key] || {}) })).filter((d) => d.min);
+
+const faq = [
+  ['Ümraniye’de taksi nasıl çağırırım?', `${PHONE_DISPLAY} numarasını arayın ya da WhatsApp’tan konumunuzu gönderin. Mahallenizi, sokak veya site adını söylemeniz yeterli; aracı adresinize yönlendiriyoruz.`],
+  ['Hangi mahallelere taksi gönderiyorsunuz?', `Ümraniye’nin 37 mahallesinin tamamına: ${MAHALLELER.map((m) => m.name).join(', ')}.`],
+  ['Taksi ücreti nasıl hesaplanıyor?', 'İstanbul’da taksiler taksimetreyle çalışır; ücret İBB’nin belirlediği güncel tarifeye göre hesaplanır. Havalimanı ve şehirlerarası yolculuklarda tahmini tutarı yola çıkmadan önce sorabilirsiniz.'],
+  ['Havalimanına taksi ayarlayabilir miyim?', 'Evet. Uçuş saatinizi önceden bildirirseniz Sabiha Gökçen ve İstanbul Havalimanı için aracı belirttiğiniz saatte kapınıza gönderiyoruz.'],
+  ['Durağınız nerede?', 'Durağımız Ümraniye Tepeüstü Mahallesi’nde. Araçlarımız Ümraniye’nin her mahallesine hizmet veriyor.'],
+];
+const schema = [
+  {
+    '@type': 'TaxiService',
+    name: 'Ümraniye Taksi',
+    serviceType: 'Taksi',
+    provider: { '@id': SITE_URL + '/#durak' },
+    areaServed: { '@type': 'City', name: 'Ümraniye, İstanbul' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Taksi hizmetleri',
+      itemListElement: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.title, url: `${SITE_URL}/hizmetler/${s.slug}/` } })),
+    },
+  },
+  { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+<Base
+  title={`Ümraniye Taksi Durağı | Taksi Çağır ${PHONE_DISPLAY}`}
+  description={`Ümraniye’de taksi mi lazım? ${PHONE_DISPLAY}’yi arayın veya WhatsApp’tan konum gönderin. 37 mahalleye taksi, Sabiha Gökçen ve İstanbul Havalimanı transferi.`}
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Ümraniye · Tepeüstü</p>
+      <h1>Ümraniye Taksi Durağı</h1>
+      <p class="lead">Ümraniye’nin 37 mahallesine taksi. Arayın ya da WhatsApp’tan konumunuzu gönderin, en yakın aracımızı kapınıza yönlendirelim.</p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_hero">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          {PHONE_DISPLAY}
+        </a>
+        <a class="btn btn-wa" href={waLink()} rel="noopener" data-ev="wa_hero" data-wa-loc>WhatsApp’tan Konum Gönder</a>
+      </div>
+      <ul class="hero-points">
+        <li>Taksimetreli, resmi taksi</li>
+        <li>Havalimanı transferi</li>
+        <li>Ümraniye’nin tüm mahalleleri</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>Taksi çağırmak 3 adım</h2></div>
+      <div class="grid g3 steps">
+        <div class="card"><h3>Arayın veya yazın</h3><p>{PHONE_DISPLAY} numarasını arayın ya da WhatsApp’tan mesaj atın.</p></div>
+        <div class="card"><h3>Konumunuzu paylaşın</h3><p>Mahalle, sokak ya da site adını söyleyin; WhatsApp’tan konum göndermek en hızlısı.</p></div>
+        <div class="card"><h3>Araç kapınızda</h3><p>En yakın aracımız adresinize yönlendirilir, taksimetreyle yolculuğunuz başlar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="mahalleler">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Ümraniye’nin 37 mahallesine taksi</h2>
+        <p>Mahallenizi seçin; o mahalledeki öne çıkan noktaları, en yakın metro istasyonunu ve havalimanlarına mesafeyi görün.</p>
+      </div>
+      <ul class="mah-grid">
+        {MAHALLELER.map((m) => {
+          const d = dataOf(m.slug);
+          return <li><a href={m.url}>{m.name} Taksi{d.drive?.durak && m.slug !== 'tepeustu' && <small>Duraktan ~{d.drive.durak.min} dk</small>}{m.slug === 'tepeustu' && <small>Durağımız burada</small>}</a></li>;
+        })}
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>Hizmetlerimiz</h2></div>
+      <div class="grid g3">
+        {SERVICES.map((s) => (
+          <div class="card"><h3>{s.title}</h3><p>{s.short}</p><a class="more" href={`/hizmetler/${s.slug}/`}>Detaylar →</a></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {drives.length > 0 && (
+    <section class="sec sec-alt">
+      <div class="wrap">
+        <div class="sec-head"><h2>Ümraniye’den taksiyle mesafeler</h2><p>Tepeüstü’ndeki durağımızdan sık gidilen noktalara yaklaşık mesafe ve trafiksiz süreler.</p></div>
+        <table class="dist">
+          <thead><tr><th>Varış noktası</th><th>Yol</th><th>Trafiksiz süre</th></tr></thead>
+          <tbody>{drives.map((x) => <tr><td>{x.name}</td><td>~{fmtKm(x.km)} km</td><td>~{x.min} dk</td></tr>)}</tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>Sık sorulan sorular</h2></div>
+      {faq.map(([q, a]) => <details class="faq"><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ümraniye’de taksiye mi ihtiyacınız var?</h2>
+      <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_band">Ara: {PHONE_DISPLAY}</a>
+    </div>
+  </section>
+</Base>

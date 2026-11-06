@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umraniyetaksiduragi.com/sitemap-index.xml

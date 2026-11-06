@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import { MAHALLELER, SITE_URL, BRAND, PHONE_DISPLAY, PHONE_TEL, waLink } from '../../data/site.js';
+import { contentFor, metaFor, fmtKm, de, den, e } from '../../lib/mahalle.js';
+
+export function getStaticPaths() {
+  return MAHALLELER.map((m) => ({ params: { slug: `${m.slug}-taksi` }, props: { m } }));
+}
+const { m } = Astro.props;
+const c = contentFor(m.slug);
+const { title, desc } = metaFor(m.slug);
+const url = SITE_URL + m.url;
+
+const schema = [
+  {
+    '@type': 'TaxiService',
+    '@id': url + '#hizmet',
+    name: `${m.name} Taksi`,
+    serviceType: 'Taksi',
+    url,
+    provider: { '@id': SITE_URL + '/#durak' },
+    areaServed: { '@type': 'Place', name: `${m.name} Mahallesi, Ümraniye, İstanbul` },
+    availableChannel: { '@type': 'ServiceChannel', servicePhone: { '@type': 'ContactPoint', telephone: PHONE_TEL, contactType: 'customer service', areaServed: 'TR' } },
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: c.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+];
+---
+<Base title={title} description={desc} crumbs={[['Mahalleler', '/mahalleler/'], [`${m.name} Taksi`, m.url]]} schema={schema}>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>{m.name} Taksi</h1>
+      <p>{de(m.name)} taksi çağırmak için {PHONE_DISPLAY} numarasını arayın ya da WhatsApp’tan konumunuzu gönderin.</p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_mahalle">Hemen Ara: {PHONE_DISPLAY}</a>
+        <a class="btn btn-wa" href={waLink(`${m.name} Mahallesi, `)} rel="noopener" data-ev="wa_mahalle" data-wa-loc>WhatsApp’tan Konum Gönder</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <article class="prose">
+      <h2>{m.name} Mahallesi’ne taksi</h2>
+      {c.paragraphs.map((p) => <p>{p}</p>)}
+
+      {c.landmarks.length > 0 && (
+        <>
+          <h2>{m.name} Mahallesi’nde öne çıkan noktalar</h2>
+          <p>Aşağıdaki noktaların her birinden taksi çağırabilirsiniz. Adres tarif ederken bu yerlerden birini söylemek aracın sizi bulmasını kolaylaştırır.</p>
+          <div class="lm">
+            {c.landmarks.map(([h, items]) => (
+              <div class="card"><h3>{h}</h3><ul>{items.map((x) => <li>{x}</li>)}</ul></div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {c.drives.length > 0 && (
+        <>
+          <h2>{den(m.name)} taksiyle mesafeler</h2>
+          <table class="dist">
+            <thead><tr><th>Varış noktası</th><th>Yol</th><th>Trafiksiz süre</th></tr></thead>
+            <tbody>
+              {c.drives.map((x) => (
+                <tr><td>{x.name}</td><td>~{fmtKm(x.km)} km</td><td>~{x.min} dk</td></tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="note">Mesafe ve süreler mahalle merkezinden, trafiksiz koşullar için hesaplanmış tahmini değerlerdir. Yoğun saatlerde süre uzayabilir.</p>
+        </>
+      )}
+
+      <h2>{m.name} taksi: sık sorulan sorular</h2>
+      {c.faq.map(([q, a]) => (
+        <details class="faq"><summary>{q}</summary><p>{a}</p></details>
+      ))}
+
+      {c.neighbors.length > 0 && (
+        <>
+          <h2>Yakındaki mahalleler</h2>
+          <p>{den(m.name)} komşu mahallelere de taksi gönderiyoruz:</p>
+          <ul class="chips">{c.neighbors.map((n) => <li><a href={n.url}>{n.name} Taksi</a></li>)}</ul>
+        </>
+      )}
+    </article>
+
+    <aside class="side">
+      <div class="card">
+        <h3>{m.name} için taksi çağır</h3>
+        <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_side">{PHONE_DISPLAY}</a>
+        <a class="btn btn-wa" href={waLink(`${m.name} Mahallesi, `)} rel="noopener" data-ev="wa_side" data-wa-loc>WhatsApp</a>
+      </div>
+      <div class="card">
+        <h3>Havalimanı transferi</h3>
+        <p>{den(m.name)} Sabiha Gökçen ve İstanbul Havalimanı’na taksi.</p>
+        <a class="more" href="/hizmetler/sabiha-gokcen-taksi/">Sabiha Gökçen taksi →</a><br />
+        <a class="more" href="/hizmetler/istanbul-havalimani-taksi/">İstanbul Havalimanı taksi →</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>{m.name} Mahallesi’ne hemen taksi</h2>
+      <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_band">Ara: {PHONE_DISPLAY}</a>
+    </div>
+  </section>
+</Base>

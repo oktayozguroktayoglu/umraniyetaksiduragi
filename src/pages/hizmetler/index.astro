@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SERVICES, PHONE_DISPLAY, PHONE_TEL } from '../../data/site.js';
+---
+<Base title="Taksi Hizmetleri | Ümraniye Taksi Durağı" description={`Ümraniye’den havalimanı, hastane ve şehirlerarası taksi. Taksi çağırmak için ${PHONE_DISPLAY}.`} crumbs={[['Hizmetler', '/hizmetler/']]}>
+  <section class="page-head"><div class="wrap"><h1>Taksi hizmetlerimiz</h1><p>Şehir içi yolculukların yanında havalimanı, hastane ve şehirlerarası yolculuklar için de taksi gönderiyoruz.</p>
+  <a class="btn btn-call" href={`tel:${PHONE_TEL}`} data-ev="call_services">Hemen Ara: {PHONE_DISPLAY}</a></div></section>
+  <section class="sec"><div class="wrap grid g3">
+    {SERVICES.map((s) => <div class="card"><h2 style="font-size:20px">{s.title}</h2><p>{s.short}</p><a class="more" href={`/hizmetler/${s.slug}/`}>Detaylar →</a></div>)}
+  </div></section>
+</Base>
