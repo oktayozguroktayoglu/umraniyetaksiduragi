@@ -71,7 +71,7 @@ def buttons():
     return f'<a class="btn call" href="tel:{PHONE_TEL}">📞 Hemen Ara: {PHONE_DISPLAY}</a>{wa}'
 
 
-def page(path, title, desc, h1, body, area):
+def page(path, title, desc, h1, body, area, root="./"):
     url = f"{SITE}/{path}"
     e = html.escape
     return f"""<!doctype html>
@@ -87,12 +87,12 @@ def page(path, title, desc, h1, body, area):
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="{root}style.css">
 <script type="application/ld+json">{schema(url, area)}</script>
 </head>
 <body>
 <header class="top">
-  <a class="logo" href="/">🚕 {NAME}</a>
+  <a class="logo" href="{root}">🚕 {NAME}</a>
   <a class="tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 </header>
 <main>
@@ -113,9 +113,9 @@ def page(path, title, desc, h1, body, area):
 """
 
 
-def mahalle_links(skip=None):
+def mahalle_links(root, skip=None):
     items = "".join(
-        f'<li><a href="/mahalle/{slug(m)}/">{m} Taksi</a></li>'
+        f'<li><a href="{root}mahalle/{slug(m)}/">{m} Taksi</a></li>'
         for m in MAHALLELER if m != skip)
     return f'<ul class="grid">{items}</ul>'
 
@@ -153,7 +153,7 @@ def build():
 {FEATURES}
 <section>
   <h2>Hizmet verdiğimiz mahalleler</h2>
-  {mahalle_links()}
+  {mahalle_links("./")}
 </section>
 """,
         {"@type": "City", "name": f"{DISTRICT}, {CITY}"},
@@ -179,10 +179,11 @@ def build():
 {FEATURES}
 <section>
   <h2>Ümraniye'deki diğer mahalleler</h2>
-  {mahalle_links(skip=m)}
+  {mahalle_links("../../", skip=m)}
 </section>
 """,
             {"@type": "Place", "name": f"{m} Mahallesi, {DISTRICT}, {CITY}"},
+            root="../../",
         )
 
     urls = [""] + [f"mahalle/{slug(m)}/" for m in MAHALLELER]
