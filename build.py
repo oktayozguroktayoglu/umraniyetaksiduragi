@@ -93,6 +93,11 @@ def page(path, title, desc, h1, body, area, root="./"):
 <body>
 <header class="top">
   <a class="logo" href="{root}">🚕 {NAME}</a>
+  <nav>
+    <a href="#mahalleler">Mahalleler</a>
+    <a href="{'' if root == './' else root}#havalimani">Havalimanı Transferi</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
   <a class="tel" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 </header>
 <main>
@@ -103,7 +108,7 @@ def page(path, title, desc, h1, body, area, root="./"):
 </section>
 {body}
 </main>
-<footer>
+<footer id="iletisim">
   <p><strong>{NAME}</strong> · {e(ADDRESS)}, {DISTRICT} / {CITY}</p>
   <p><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · 7 gün 24 saat</p>
 </footer>
@@ -141,7 +146,7 @@ def build():
         "",
         f"Ümraniye Taksi – 7/24 Taksi Durağı | {PHONE_DISPLAY}",
         f"Ümraniye'nin tüm mahallelerine 7/24 taksi. Buyaka çevresi ve tüm Ümraniye'den "
-        f"hızlı taksi çağırmak için hemen arayın: {PHONE_DISPLAY}.",
+        f"hızlı taksi ve havalimanı transferi için hemen arayın: {PHONE_DISPLAY}.",
         "Ümraniye Taksi Durağı – 7/24 Taksi Çağır",
         f"""
 <section>
@@ -151,7 +156,20 @@ def build():
   gönderiyoruz. Tek yapmanız gereken aramak ve adresinizi söylemek.</p>
 </section>
 {FEATURES}
-<section>
+<section id="havalimani">
+  <h2>Ümraniye'den havalimanı transferi</h2>
+  <p>Ümraniye'nin her mahallesinden <strong>Sabiha Gökçen Havalimanı</strong> ve
+  <strong>İstanbul Havalimanı</strong>'na taksi gönderiyoruz; havalimanından
+  Ümraniye'ye dönüş için de arayabilirsiniz.</p>
+  <ul class="features">
+    <li><strong>Sabiha Gökçen taksi</strong> – Ümraniye'den Anadolu Yakası'ndaki havalimanına.</li>
+    <li><strong>İstanbul Havalimanı taksi</strong> – Köprü üzerinden Avrupa Yakası'na.</li>
+    <li><strong>Erken uçuşlar</strong> – Sabah erken uçuşunuz varsa bir gün önceden arayıp aracınızı ayırtın.</li>
+    <li><strong>Bagaj</strong> – Valizinizi söyleyin, uygun aracı gönderelim.</li>
+  </ul>
+  <div class="cta">{buttons()}</div>
+</section>
+<section id="mahalleler">
   <h2>Hizmet verdiğimiz mahalleler</h2>
   {mahalle_links("./")}
 </section>
@@ -177,7 +195,7 @@ def build():
   AVM'ler ve havalimanlarına gece gündüz ulaşım sağlıyoruz.</p>
 </section>
 {FEATURES}
-<section>
+<section id="mahalleler">
   <h2>Ümraniye'deki diğer mahalleler</h2>
   {mahalle_links("../../", skip=m)}
 </section>

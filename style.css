@@ -4,6 +4,11 @@ body { margin: 0; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, s
 a { color: inherit; }
 .top { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: var(--d); color: #fff; position: sticky; top: 0; z-index: 2; }
 .logo { font-weight: 800; text-decoration: none; }
+nav { display: none; gap: 22px; }
+nav a { color: #ddd; text-decoration: none; font-size: 15px; }
+nav a:hover { color: var(--y); }
+html { scroll-behavior: smooth; }
+section[id], footer { scroll-margin-top: 64px; }
 .tel { color: var(--y); font-weight: 700; text-decoration: none; }
 main { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 .hero { text-align: center; padding: 48px 0 32px; background: repeating-linear-gradient(90deg, var(--y) 0 24px, var(--d) 24px 48px) top/100% 8px no-repeat; }
@@ -21,4 +26,4 @@ h2 { font-size: 24px; margin-top: 40px; }
 .grid a:hover { background: var(--y); }
 footer { margin-top: 48px; padding: 24px 20px; background: var(--d); color: #ddd; text-align: center; font-size: 15px; }
 .sticky { position: fixed; left: 12px; right: 12px; bottom: 12px; text-align: center; padding: 16px; border-radius: 14px; background: var(--y); color: var(--d); font-weight: 800; font-size: 20px; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
-@media (min-width: 800px) { .sticky { display: none; } body { padding-bottom: 0; } }
+@media (min-width: 800px) { nav { display: flex; } .sticky { display: none; } body { padding-bottom: 0; } }
