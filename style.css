@@ -1,0 +1,24 @@
+:root { --y: #ffc400; --d: #1a1a1a; --g: #f5f5f2; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--d); background: #fff; padding-bottom: 72px; }
+a { color: inherit; }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: var(--d); color: #fff; position: sticky; top: 0; z-index: 2; }
+.logo { font-weight: 800; text-decoration: none; }
+.tel { color: var(--y); font-weight: 700; text-decoration: none; }
+main { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.hero { text-align: center; padding: 48px 0 32px; background: repeating-linear-gradient(90deg, var(--y) 0 24px, var(--d) 24px 48px) top/100% 8px no-repeat; }
+h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 16px 0 8px; }
+h2 { font-size: 24px; margin-top: 40px; }
+.lead { font-size: 19px; color: #555; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px; }
+.btn { display: inline-block; padding: 16px 26px; border-radius: 12px; font-weight: 800; font-size: 19px; text-decoration: none; }
+.call { background: var(--y); color: var(--d); }
+.wa { background: #25d366; color: #fff; }
+.features { list-style: none; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.features li { background: var(--g); padding: 16px; border-radius: 12px; border-left: 5px solid var(--y); }
+.grid { list-style: none; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.grid a { display: block; padding: 10px 12px; background: var(--g); border-radius: 8px; text-decoration: none; }
+.grid a:hover { background: var(--y); }
+footer { margin-top: 48px; padding: 24px 20px; background: var(--d); color: #ddd; text-align: center; font-size: 15px; }
+.sticky { position: fixed; left: 12px; right: 12px; bottom: 12px; text-align: center; padding: 16px; border-radius: 14px; background: var(--y); color: var(--d); font-weight: 800; font-size: 20px; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+@media (min-width: 800px) { .sticky { display: none; } body { padding-bottom: 0; } }
